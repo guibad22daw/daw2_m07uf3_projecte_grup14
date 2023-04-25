@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateReservaTable extends Migration
+class CreateReservesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreateReservaTable extends Migration
      */
     public function up()
     {
-        Schema::create('reserva', function (Blueprint $table) {
+        Schema::create('reserves', function (Blueprint $table) {
             $table->string('dni',9);
             $table->foreign('dni')->references('dni')->on('clients')->onDelete('cascade')->onUpdate('cascade');
             $table->string('codiHab',7);
@@ -34,6 +34,6 @@ class CreateReservaTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('reserva');
+        Schema::dropIfExists('reserves');
     }
 }
