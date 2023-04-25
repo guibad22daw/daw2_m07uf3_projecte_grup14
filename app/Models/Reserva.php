@@ -12,6 +12,8 @@ class Reserva extends Model
     protected $primaryKey = ['dni','codiHab'];
     public $incrementing = false;
     protected $fillable = [
+        'dni',
+        'codiHab',
         'data_entrada',
         'data_sortida',
         'pensio',
