@@ -14,8 +14,13 @@ class ControladorHabitacio extends Controller
      */
     public function index()
     {
-        $dades_habitacio = Habitacio::all();
-        return view('llista', compact('dades_habitacio'));
+        return view('dashboard-habitacions');
+    }
+
+    public function visualitza()
+    {
+        $dades_habitacions = Habitacio::all();
+        return view('visualitza-habitacions', compact('dades_habitacions'));
     }
 
     /**
@@ -61,9 +66,9 @@ class ControladorHabitacio extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($tid)
+    public function mostra($codiHab)
     {
-        $dades_habitacio = Habitacio::findOrFail($tid);
+        $dades_habitacio = Habitacio::findOrFail($codiHab);
         return view('mostra', compact('dades_habitacio'));
     }
 
@@ -73,9 +78,9 @@ class ControladorHabitacio extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($tid)
+    public function modifica($codiHab)
     {
-        $dades_habitacio = Habitacio::findOrFail($tid);
+        $dades_habitacio = Habitacio::findOrFail($codiHab);
         return view('actualitza', compact('dades_habitacio'));
     }
 
@@ -86,7 +91,7 @@ class ControladorHabitacio extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $tid)
+    public function update(Request $request, $codiHab)
     {
         $noves_dades_habitacio = $request->validate([
             'codiHab' => 'required',
@@ -102,7 +107,7 @@ class ControladorHabitacio extends Controller
             'nens' => 'required',
             'animals' => 'required',
         ]);
-        Habitacio::findOrFail($tid)->update($noves_dades_habitacio);
+        Habitacio::findOrFail($codiHab)->update($noves_dades_habitacio);
         return view('dashboard');
     }
 
@@ -112,21 +117,15 @@ class ControladorHabitacio extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($tid)
+    public function elimina($codiHab)
     {
-        $Habitacio = Habitacio::findOrFail($tid)->delete();
+        $Habitacio = Habitacio::findOrFail($codiHab)->delete();
         return view('dashboard');
     }
 
-    public function index_basic()
+    public function show_basic($codiHab)
     {
-        $dades_habitacion = Habitacio::all();
-        return view('llista-basica', compact('dades_habitacio'));
-    }
-
-    public function show_basic($tid)
-    {
-        $dades_habitacio = Habitacio::findOrFail($tid);
+        $dades_habitacio = Habitacio::findOrFail($codiHab);
         return view('mostra-basica', compact('dades_habitacio'));
     }
 }

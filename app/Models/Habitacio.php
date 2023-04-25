@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Habitacio extends Model
 {
     use HasFactory;
-
+    public $table = "habitacions";
     protected $primaryKey = 'codiHab';
     public $incrementing = false;
     protected $keyType = 'string';

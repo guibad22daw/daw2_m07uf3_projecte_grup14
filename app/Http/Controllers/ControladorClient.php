@@ -14,8 +14,8 @@ class ControladorClient extends Controller
      */
     public function index()
     {
-        $dales_clients = Client::all();
-        return view('llista', compact('dales_clients'));
+        $dades_clients = Client::all();
+        return view('llista', compact('dades_clients'));
     }
 
     /**
@@ -116,8 +116,8 @@ class ControladorClient extends Controller
 
     public function index_basic()
     {
-        $dales_clients = Client::all();
-        return view('llista-basica', compact('dales_clients'));
+        $dades_clients = Client::all();
+        return view('llista-basica', compact('dades_clients'));
     }
 
     public function show_basic($tid)
