@@ -17,16 +17,16 @@ class UserSeeder extends Seeder
     {
         $llista_usuaris = [
             [
-                'name' => 'leniad',
-                'role' => 'admin',
-                'email' => 'leinad@fjeclot.net',
-                'password' => Hash::make('fjeClot23#')
+                'nom_complet' => 'Guillem Badenas',
+                'tipus' => 'gerent',
+                'email' => 'guillem@fjeclot.net',
+                'password' => Hash::make('fjeClot23#'),
             ],
             [
-                'name' => 'aletse',
-                'role' => 'basic',
-                'email' => 'aletse@fjeclot.net',
-                'password' => Hash::make('clotFje23@')
+                'nom_complet' => 'Judit Perea',
+                'tipus' => 'gerent',
+                'email' => 'judit@fjeclot.net',
+                'password' => Hash::make('fjeClot23#'),
             ],
         ];
         DB::table('users')->insert($llista_usuaris);                  
