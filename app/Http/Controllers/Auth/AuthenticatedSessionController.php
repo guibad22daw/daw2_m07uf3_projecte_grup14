@@ -36,18 +36,18 @@ class AuthenticatedSessionController extends Controller
 
         $user = auth()->user();
         $user->darrera_hora_entrada = Carbon::now()->timezone('Europe/Madrid');
-        $user->save();
         
+        /** @var \App\Models\User $user **/
+        $user->save();
+
         if (auth()->user()->tipus == 'gerent') {
             return redirect()->intended(RouteServiceProvider::ADMIN_HOME);
-            
-        }
-        elseif(auth()->user()->tipus == 'treballador'){
+
+        } elseif (auth()->user()->tipus == 'treballador') {
             return redirect()->intended(RouteServiceProvider::BASIC_HOME);
-        }        
-        else{
+        } else {
             return auth()->logout();
-        }   
+        }
     }
 
     /**
@@ -60,6 +60,8 @@ class AuthenticatedSessionController extends Controller
     {
         $user = auth()->user();
         $user->darrera_hora_sortida = Carbon::now()->timezone('Europe/Madrid');
+
+        /** @var \App\Models\User $user **/
         $user->save();
 
         Auth::guard('web')->logout();
