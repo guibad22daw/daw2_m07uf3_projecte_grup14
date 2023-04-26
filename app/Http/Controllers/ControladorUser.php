@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\User;
+use Illuminate\Support\Facades\Hash;
+
 
 class ControladorUser extends Controller
 {
@@ -41,7 +43,7 @@ class ControladorUser extends Controller
      */
     public function store(Request $request)
     {
-        $nou_user = $request->validate([
+        $noves_dades_usuari = $request->validate([
             'nom_complet' => 'required',
             'email' => 'required',
             'password' => 'required',
@@ -49,9 +51,16 @@ class ControladorUser extends Controller
             'darrera_hora_entrada' => 'nullable',
             'darrera_hora_sortida' => 'nullable',
         ]);
-        $User = User::create($nou_user);
+
+        $user = new User();
+        $user->nom_complet = $noves_dades_usuari['nom_complet'];
+        $user->email = $noves_dades_usuari['email'];
+        $user->password = Hash::make($noves_dades_usuari['password']);
+        $user->tipus = $noves_dades_usuari['tipus'];
+        $user->save();
+    
         #return redirect('/dashboard')->with('completed', 'User creat!');
-        return view('dashboard');
+        return view('dashboard-usuaris');
     }
 
     /**
@@ -60,9 +69,9 @@ class ControladorUser extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($tid)
+    public function show($id)
     {
-        $dades_user = User::findOrFail($tid);
+        $dades_user = User::findOrFail($id);
         return view('mostra-usuari', compact('dades_user'));
     }
 
@@ -72,9 +81,9 @@ class ControladorUser extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($tid)
+    public function edit($id)
     {
-        $dades_user = User::findOrFail($tid);
+        $dades_user = User::findOrFail($id);
         return view('modifica-usuari', compact('dades_user'));
     }
 
@@ -85,8 +94,10 @@ class ControladorUser extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $tid)
+    public function update(Request $request, $id)
     {
+        $user = User::find($id);
+        
         $noves_dades_usuari = $request->validate([
             'nom_complet' => 'required',
             'email' => 'required',
@@ -95,8 +106,16 @@ class ControladorUser extends Controller
             'darrera_hora_entrada' => 'nullable',
             'darrera_hora_sortida' => 'nullable',
         ]);
-        User::findOrFail($tid)->update($noves_dades_usuari);
-        return view('dashboard');
+
+        $user->nom_complet = $noves_dades_usuari['nom_complet'];
+        $user->email = $noves_dades_usuari['email'];
+        $user->tipus = $noves_dades_usuari['tipus'];
+        if (isset($noves_dades_usuari['password'])) {
+            $user->password = Hash::make($noves_dades_usuari['password']);
+        }
+        $user->save(); 
+
+        return view('dashboard-usuaris');
     }
 
     /**
@@ -105,9 +124,9 @@ class ControladorUser extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($tid)
+    public function destroy($id)
     {
-        $User = User::findOrFail($tid)->delete();
-        return view('dashboard');
+        $User = User::findOrFail($id)->delete();
+        return view('dashboard-usuaris');
     }
 }
