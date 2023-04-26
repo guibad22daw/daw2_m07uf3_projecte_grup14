@@ -14,8 +14,7 @@ class ControladorClient extends Controller
      */
     public function index()
     {
-        $dades_clients = Client::all();
-        return view('llista', compact('dades_clients'));
+        return view('dashboard-clients');
     }
 
     /**
@@ -25,7 +24,13 @@ class ControladorClient extends Controller
      */
     public function create()
     {
-        return view('crea');
+        return view('crea-client');
+    }
+
+    public function visualitza()
+    {
+        $dades_clients = Client::all();
+        return view('visualitza-clients', compact('dades_clients'));
     }
 
     /**
@@ -49,8 +54,7 @@ class ControladorClient extends Controller
             'num_targeta' => 'required',
         ]);
         $Client = Client::create($nouClient);
-        #return redirect('/dashboard')->with('completed', 'Client creat!');
-        return view('dashboard');
+        return redirect('/clients')->with('completed', 'Client creat!');
     }
 
     /**
@@ -59,10 +63,10 @@ class ControladorClient extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($tid)
+    public function show($dni)
     {
-        $dades_client = Client::findOrFail($tid);
-        return view('mostra', compact('dades_client'));
+        $dades_client = Client::findOrFail($dni);
+        return view('mostra-client', compact('dades_client'));
     }
 
     /**
@@ -71,10 +75,10 @@ class ControladorClient extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($tid)
+    public function edit($dni)
     {
-        $dades_client = Client::findOrFail($tid);
-        return view('actualitza', compact('dades_client'));
+        $dades_client = Client::findOrFail($dni);
+        return view('modifica-client', compact('dades_client'));
     }
 
     /**
@@ -84,7 +88,7 @@ class ControladorClient extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $tid)
+    public function update(Request $request, $dni)
     {
         $noves_dades_client = $request->validate([
             'dni' => 'required',
@@ -98,8 +102,8 @@ class ControladorClient extends Controller
             'tipus_targeta' => 'required',
             'num_targeta' => 'required',
         ]);
-        Client::findOrFail($tid)->update($noves_dades_client);
-        return view('dashboard');
+        Client::findOrFail($dni)->update($noves_dades_client);
+        return redirect('/clients')->with('completed', 'Client modificat!');
     }
 
     /**
@@ -108,21 +112,9 @@ class ControladorClient extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($tid)
+    public function destroy($dni)
     {
-        $Client = Client::findOrFail($tid)->delete();
-        return view('dashboard');
-    }
-
-    public function index_basic()
-    {
-        $dades_clients = Client::all();
-        return view('llista-basica', compact('dades_clients'));
-    }
-
-    public function show_basic($tid)
-    {
-        $dades_client = Client::findOrFail($tid);
-        return view('mostra-basica', compact('dades_client'));
+        $Client = Client::findOrFail($dni)->delete();
+        return view('dashboard-clients');
     }
 }
