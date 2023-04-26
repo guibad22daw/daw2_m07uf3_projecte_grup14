@@ -18,7 +18,7 @@
 			@csrf
             @method('PATCH')
             <div class="form-group">           
-				<label for="nom">Codi habitació</label>
+				<label for="codiHab">Codi habitació</label>
 				<input type="text" class="form-control" name="codiHab" value="{{ $dades_habitacio->codiHab }}" />
 			</div>
 			<div class="form-group">           

@@ -15,9 +15,15 @@ class ControladorReserva extends Controller
     public function index()
     {
         $dades_reserva = Reserva::all();
-        return view('llista', compact('dades_reserva'));
+        return view('dashboard-reserves', compact('dades_reserva'));
     }
 
+    public function visualitza()
+    {
+        $dades_reserva = Reserva::all();
+        return view('visualitza-reserves', compact('dades_reserva'));
+    }
+    
     /**
      * Show the form for creating a new resource.
      *
@@ -25,7 +31,7 @@ class ControladorReserva extends Controller
      */
     public function create()
     {
-        return view('crea');
+        return view('crea-reserva');
     }
 
     /**
@@ -47,7 +53,7 @@ class ControladorReserva extends Controller
         ]);
         $Reserva = Reserva::create($novaReserva);
         #return redirect('/dashboard')->with('completed', 'Reserva creat!');
-        return view('dashboard');
+        return view('dashboard-reserva');
     }
 
     /**
@@ -93,7 +99,7 @@ class ControladorReserva extends Controller
             'asseguranca' => 'required',
         ]);
         Reserva::findOrFail($tid)->update($noves_dades_reserva);
-        return view('dashboard');
+        return view('dashboard-reserva');
     }
 
     /**
@@ -105,18 +111,6 @@ class ControladorReserva extends Controller
     public function destroy($tid)
     {
         $Reserva = Reserva::findOrFail($tid)->delete();
-        return view('dashboard');
-    }
-
-    public function index_basic()
-    {
-        $dades_Reservan = Reserva::all();
-        return view('llista-basica', compact('dades_reserva'));
-    }
-
-    public function show_basic($tid)
-    {
-        $dades_reserva = Reserva::findOrFail($tid);
-        return view('mostra-basica', compact('dades_reserva'));
+        return view('dashboard-reserva');
     }
 }

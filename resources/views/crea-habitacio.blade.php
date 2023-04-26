@@ -19,7 +19,7 @@
             @csrf
             <!-- https://laravel.com/docs/10.x/csrf -->
             <div class="form-group">
-                <label for="nom">Codi d'habitació</label>
+                <label for="codiHab">Codi d'habitació</label>
                 <input type="text" class="form-control" name="codiHab" />
             </div>
             <div class="form-group">

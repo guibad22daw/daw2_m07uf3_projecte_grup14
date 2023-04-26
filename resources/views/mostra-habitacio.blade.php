@@ -58,11 +58,10 @@
 			<td>Animals</td>
 			<td>{{$dades_habitacio->animals == "1" ? 'Sí':'No'}}</td>
 		</tr>
-		<tr>
 	</tbody>	
   </table>
   <div class="p-6 bg-white border-b border-gray-200">
 	<a href="{{ url('dashboard') }}">Torna al dashboard<a/>                     
   </div>  
-<div>
+</div>
 @endsection

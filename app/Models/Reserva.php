@@ -9,6 +9,7 @@ class Reserva extends Model
 {
     use HasFactory;
 
+    public $table = "reserves";
     protected $primaryKey = ['dni','codiHab'];
     public $incrementing = false;
     protected $fillable = [
