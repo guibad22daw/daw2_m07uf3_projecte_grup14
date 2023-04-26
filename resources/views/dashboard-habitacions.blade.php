@@ -12,7 +12,7 @@
                     <a href="{{ url('habitacions/visualitza') }}">Habitacions: Visualitza, actualitza i esborra<a/>
                 </div>
                 <div class="p-6 bg-white border-b border-gray-200">
-                    <a href="{{ url('trebs/create') }}">Crea una nova habitacio<a/>                     
+                    <a href="{{ url('habitacions/create') }}">Crea una nova habitacio<a/>                     
                 </div>             
             </div>
         </div>

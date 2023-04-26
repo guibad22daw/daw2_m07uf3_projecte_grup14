@@ -36,15 +36,15 @@
             <td>{{$habitacio->nens == "1" ? 'Sí':'No'}}</td>
             <td>{{$habitacio->animals == "1" ? 'Sí':'No'}}</td>
             <td class="text-left">
-				      <a href="{{ route('habitacio.modifica', $habitacio->codiHab)}}" class="btn btn-primary btn-sm">Edita</a>
-				      <form action="{{ route('habitacio.elimina', $habitacio->codiHab)}}" method="post" style="display: inline-block">
+				      <a href="{{ route('habitacions.edit', $habitacio->codiHab)}}" class="btn btn-primary btn-sm">Edita</a>
+				      <form action="{{ route('habitacions.destroy', $habitacio->codiHab)}}" method="post" style="display: inline-block">
 					      @csrf
 					      @method('DELETE')
 					      <button class="btn btn-danger btn-sm" type="submit">
 						      Esborra
 					      </button>					
 				      </form>
-				      <a href="{{ route('habitacio.mostra', $habitacio->codiHab)}}" class="btn btn-info btn-sm">Mostra</a>
+				      <a href="{{ route('habitacions.show', $habitacio->codiHab)}}" class="btn btn-info btn-sm">Mostra</a>
 			      </td>            
         </tr>
         @endforeach

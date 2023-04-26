@@ -30,7 +30,7 @@ class ControladorHabitacio extends Controller
      */
     public function create()
     {
-        return view('crea');
+        return view('crea-habitacio');
     }
 
     /**
@@ -66,7 +66,7 @@ class ControladorHabitacio extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function mostra($codiHab)
+    public function show($codiHab)
     {
         $dades_habitacio = Habitacio::findOrFail($codiHab);
         return view('mostra-habitacio', compact('dades_habitacio'));
@@ -78,7 +78,7 @@ class ControladorHabitacio extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function modifica($codiHab)
+    public function edit($codiHab)
     {
         $dades_habitacio = Habitacio::findOrFail($codiHab);
         return view('modifica-habitacio', compact('dades_habitacio'));
@@ -117,7 +117,7 @@ class ControladorHabitacio extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function elimina($codiHab)
+    public function destroy($codiHab)
     {
         $Habitacio = Habitacio::findOrFail($codiHab)->delete();
         return view('dashboard');

@@ -18,8 +18,8 @@ class CreateHabitacionsTable extends Migration
             $table->primary('codiHab');
             $table->integer('capacitat');
             $table->string('mida');
-            $table->string('pensio');
             $table->string('vistes');
+            $table->string('pensio');
             $table->string('llits');
             $table->string('n_llits');
             $table->boolean('terrassa');

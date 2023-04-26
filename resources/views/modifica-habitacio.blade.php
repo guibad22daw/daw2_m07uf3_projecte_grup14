@@ -14,7 +14,7 @@
             </ul>
         </div>
         @endif
-        <form method="post" action="{{ route('habitacio.update', $dades_habitacio->codiHab) }}">
+        <form method="post" action="{{ route('habitacions.update', $dades_habitacio->codiHab) }}">
 			@csrf
             @method('PATCH')
             <div class="form-group">           
