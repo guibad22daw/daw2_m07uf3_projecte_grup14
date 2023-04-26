@@ -9,17 +9,11 @@
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 bg-white border-b border-gray-200">
-                    <a href="{{ url('habitacions') }}">Habitacions<a/>
+                    <a href="{{ url('clients/visualitza') }}">Clients: Visualitza, actualitza i esborra<a/>
                 </div>
                 <div class="p-6 bg-white border-b border-gray-200">
-                    <a href="{{ url('clients') }}">Clients<a/>
-                </div>
-                <div class="p-6 bg-white border-b border-gray-200">
-                    <a href="{{ url('reserves') }}">Reserves<a/>
-                </div>
-                <div class="p-6 bg-white border-b border-gray-200">
-                    <a href="{{ url('usuaris') }}">Usuaris<a/>
-                </div>              
+                    <a href="{{ url('clients/create') }}">Afegeix un nou client<a/>                     
+                </div>             
             </div>
         </div>
     </div>

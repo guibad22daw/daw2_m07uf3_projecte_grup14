@@ -39,6 +39,14 @@ Route::group(['middleware' => 'auth'], function(){
     Route::get('/habitacions/visualitza', 'ControladorHabitacio@visualitza')->name('habitacio.visualitza');
     Route::resource('/habitacions', 'ControladorHabitacio');
     
+    // Rutes per la gestió de CLIENTS
+    Route::get('/clients/visualitza', 'ControladorClient@visualitza')->name('client.visualitza');
+    Route::resource('/clients', 'ControladorClient');
+
+    // Rutes per la gestió de RESERVES
+    Route::get('/reserves/visualitza', 'ControladorReserva@visualitza')->name('reserva.visualitza');
+    Route::resource('/reserves', 'ControladorReserva');
+    
 });
 
 require __DIR__.'/auth.php';
