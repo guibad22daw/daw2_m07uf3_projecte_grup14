@@ -69,7 +69,7 @@ class ControladorHabitacio extends Controller
     public function mostra($codiHab)
     {
         $dades_habitacio = Habitacio::findOrFail($codiHab);
-        return view('mostra', compact('dades_habitacio'));
+        return view('mostra-habitacio', compact('dades_habitacio'));
     }
 
     /**

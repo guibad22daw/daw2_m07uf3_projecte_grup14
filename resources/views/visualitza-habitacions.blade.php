@@ -30,11 +30,11 @@
             <td>{{$habitacio->vistes}}</td>
             <td>{{$habitacio->llits}}</td>
             <td>{{$habitacio->n_llits}}</td>
-            <td>{{$habitacio->terrassa}}</td>
-            <td>{{$habitacio->calefaccio}}</td>
-            <td>{{$habitacio->aire_acondicionat}}</td>
-            <td>{{$habitacio->nens}}</td>
-            <td>{{$habitacio->animals}}</td>
+            <td>{{$habitacio->terrassa == "1" ? 'Sí':'No'}}</td>
+            <td>{{$habitacio->calefaccio == "1" ? 'Sí':'No'}}</td>
+            <td>{{$habitacio->aire_acondicionat == "1" ? 'Sí':'No'}}</td>
+            <td>{{$habitacio->nens == "1" ? 'Sí':'No'}}</td>
+            <td>{{$habitacio->animals == "1" ? 'Sí':'No'}}</td>
             <td class="text-left">
 				      <a href="{{ route('habitacio.modifica', $habitacio->codiHab)}}" class="btn btn-primary btn-sm">Edita</a>
 				      <form action="{{ route('habitacio.elimina', $habitacio->codiHab)}}" method="post" style="display: inline-block">
