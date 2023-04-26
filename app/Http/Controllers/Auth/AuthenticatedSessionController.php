@@ -5,8 +5,10 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Auth\LoginRequest;
 use App\Providers\RouteServiceProvider;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use App\Models\User;
 
 class AuthenticatedSessionController extends Controller
 {
@@ -31,6 +33,10 @@ class AuthenticatedSessionController extends Controller
         $request->authenticate();
 
         $request->session()->regenerate();
+
+        $user = auth()->user();
+        $user->darrera_hora_entrada = Carbon::now()->timezone('Europe/Madrid');
+        $user->save();
         
         if (auth()->user()->tipus == 'gerent') {
             return redirect()->intended(RouteServiceProvider::ADMIN_HOME);
@@ -52,6 +58,10 @@ class AuthenticatedSessionController extends Controller
      */
     public function destroy(Request $request)
     {
+        $user = auth()->user();
+        $user->darrera_hora_sortida = Carbon::now()->timezone('Europe/Madrid');
+        $user->save();
+
         Auth::guard('web')->logout();
 
         $request->session()->invalidate();

@@ -19,8 +19,8 @@ class CreateUsersTable extends Migration
             $table->string('email')->unique();
             $table->string('password');
             $table->string('tipus');
-            $table->date('darrera_hora_entrada')->nullable();
-            $table->date('darrera_hora_sortida')->nullable();
+            $table->dateTime('darrera_hora_entrada')->nullable();
+            $table->dateTime('darrera_hora_sortida')->nullable();
             $table->rememberToken();
             $table->timestamps();
         });
