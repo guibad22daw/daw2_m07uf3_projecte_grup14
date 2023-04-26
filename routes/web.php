@@ -37,9 +37,10 @@ Route::group(['middleware' => 'auth'], function(){
 
     Route::get('/habitacions', 'ControladorHabitacio@index')->name('habitacions.index');
     Route::get('/habitacions/visualitza', 'ControladorHabitacio@visualitza')->name('habitacio.visualitza');
-    Route::get('/habitacions/modifica', 'ControladorHabitacio@modifica')->name('habitacio.modifica');
+    Route::get('/habitacions/modifica/{codiHab}', 'ControladorHabitacio@modifica')->name('habitacio.modifica');
     Route::get('/habitacions/elimina', 'ControladorHabitacio@elimina')->name('habitacio.elimina');
     Route::get('/habitacions/mostra', 'ControladorHabitacio@mostra')->name('habitacio.mostra');
+    Route::patch('/habitacions/update/{codiHab}', 'ControladorHabitacio@update')->name('habitacio.update');
     // Route::get('trebs/index_basic', 'ControladorTreballador@index_basic')->name('trebs.index_basic');
     // Route::get('trebs/show_basic/{tid}', 'ControladorTreballador@show_basic')->name('trebs.show_basic');
     

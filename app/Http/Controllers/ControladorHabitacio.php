@@ -81,7 +81,7 @@ class ControladorHabitacio extends Controller
     public function modifica($codiHab)
     {
         $dades_habitacio = Habitacio::findOrFail($codiHab);
-        return view('actualitza', compact('dades_habitacio'));
+        return view('modifica-habitacio', compact('dades_habitacio'));
     }
 
     /**
@@ -123,9 +123,4 @@ class ControladorHabitacio extends Controller
         return view('dashboard');
     }
 
-    public function show_basic($codiHab)
-    {
-        $dades_habitacio = Habitacio::findOrFail($codiHab);
-        return view('mostra-basica', compact('dades_habitacio'));
-    }
 }

@@ -19,14 +19,14 @@ class UserSeeder extends Seeder
             [
                 'nom_complet' => 'Guillem Badenas',
                 'tipus' => 'gerent',
-                'email' => 'guillem@fjeclot.net',
-                'password' => Hash::make('fjeClot23#'),
+                'email' => 'guillem@happyflower.com',
+                'password' => Hash::make('FjeClot23#'),
             ],
             [
                 'nom_complet' => 'Judit Perea',
                 'tipus' => 'gerent',
-                'email' => 'judit@fjeclot.net',
-                'password' => Hash::make('fjeClot23#'),
+                'email' => 'judit@happyflower.com',
+                'password' => Hash::make('FjeClot23#'),
             ],
         ];
         DB::table('users')->insert($llista_usuaris);                  

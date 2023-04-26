@@ -16,7 +16,8 @@
           <td>Calefacció</td>
           <td>Aire acondicionat</td>
           <td>Nens</td>
-          <td>Animals</td>          
+          <td>Animals</td>    
+          <td>Opcions</td>    
         </tr>
     </thead>
     <tbody>
