@@ -46,6 +46,11 @@ Route::group(['middleware' => 'auth'], function(){
     // Rutes per la gestió de RESERVES
     Route::get('/reserves/visualitza', 'ControladorReserva@visualitza')->name('reserva.visualitza');
     Route::resource('/reserves', 'ControladorReserva');
+
+        // Rutes per la gestió de RESERVES
+    Route::get('/usuaris/visualitza', 'ControladorUser@visualitza')->name('user.visualitza');
+    Route::get('/usuaris/update/{id}', 'ControladorUser@update')->name('user.update');
+    Route::resource('/usuaris', 'ControladorUser');
     
 });
 
