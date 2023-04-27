@@ -14,7 +14,7 @@ class CreateReservesTable extends Migration
     public function up()
     {
         Schema::create('reserves', function (Blueprint $table) {
-            $table->increments('id');
+            $table->id('rid');
             $table->string('dni',9);
             $table->foreign('dni')->references('dni')->on('clients')->onDelete('cascade')->onUpdate('cascade');
             $table->string('codiHab',7);

@@ -19,7 +19,7 @@
         <tbody>
             @foreach($dades_reserves as $reserva)
             <tr>
-                <td>{{$reserva->id}}</td>
+                <td>{{$reserva->rid}}</td>
                 <td>{{$reserva->dni}}</td>
                 <td>{{$reserva->codiHab}}</td>
                 <td>{{$reserva->data_entrada}}</td>
@@ -28,15 +28,15 @@
                 <td>{{$reserva->preu_dia}}</td>
                 <td>{{$reserva->asseguranca}}</td>
                 <td class="text-left">
-                    <a href="{{ route('reserves.edit', $reserva->id)}}" class="btn btn-primary btn-sm">Edita</a>
-                    <form action="{{ route('reserves.destroy', $reserva->id)}}" method="post" style="display: inline-block">
+                    <a href="{{ route('reserves.edit', $reserva->rid)}}" class="btn btn-primary btn-sm">Edita</a>
+                    <form action="{{ route('reserves.destroy', $reserva->rid)}}" method="post" style="display: inline-block">
                         @csrf
                         @method('DELETE')
                         <button class="btn btn-danger btn-sm" type="submit">
                             Esborra
                         </button>
                     </form>
-                    <a href="{{ route('reserves.show', $reserva->id)}}" class="btn btn-info btn-sm">Mostra</a>
+                    <a href="{{ route('reserves.show', $reserva->rid)}}" class="btn btn-info btn-sm">Mostra</a>
                 </td>
             </tr>
             @endforeach

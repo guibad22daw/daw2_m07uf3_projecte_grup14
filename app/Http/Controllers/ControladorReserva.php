@@ -62,9 +62,9 @@ class ControladorReserva extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($tid)
+    public function show($rid)
     {
-        $dades_reserva = Reserva::where('id', $tid)->get();
+        $dades_reserva = Reserva::where('rid', $rid)->get();
         $dades_reserva = $dades_reserva[0];
         return view('mostra-reserva', compact('dades_reserva'));
     }
@@ -75,9 +75,9 @@ class ControladorReserva extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($tid)
+    public function edit($rid)
     {
-        $dades_reserva = Reserva::where('id', $tid)->get();
+        $dades_reserva = Reserva::where('rid', $rid)->get();
         $dades_reserva = $dades_reserva[0];
         return view('modifica-reserva', compact('dades_reserva'));
     }
@@ -89,7 +89,7 @@ class ControladorReserva extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $tid)
+    public function update(Request $request, $rid)
     {
         $noves_dades_reserva = $request->validate([
             'dni' => 'required',
@@ -100,7 +100,7 @@ class ControladorReserva extends Controller
             'preu_dia' => 'required',
             'asseguranca' => 'required',
         ]);
-        Reserva::where('id',$tid)->update($noves_dades_reserva);
+        Reserva::where('rid',$rid)->update($noves_dades_reserva);
         return view('dashboard-reserves');
     }
 
@@ -110,9 +110,9 @@ class ControladorReserva extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($tid)
+    public function destroy($rid)
     {
-        Reserva::where('id',$tid)->delete();
+        Reserva::where('rid',$rid)->delete();
         return view('dashboard-reserves');
     }
 }
