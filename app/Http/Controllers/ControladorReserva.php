@@ -20,8 +20,8 @@ class ControladorReserva extends Controller
 
     public function visualitza()
     {
-        $dades_reserva = Reserva::all();
-        return view('visualitza-reserves', compact('dades_reserva'));
+        $dades_reserves = Reserva::all();
+        return view('visualitza-reserves', compact('dades_reserves'));
     }
     
     /**
@@ -52,8 +52,8 @@ class ControladorReserva extends Controller
             'asseguranca' => 'required',
         ]);
         $Reserva = Reserva::create($novaReserva);
-        #return redirect('/dashboard')->with('completed', 'Reserva creat!');
-        return view('dashboard-reserva');
+        return redirect('/reserves')->with('completed', 'Reserva creat!');
+        #return view('dashboard-reserves');
     }
 
     /**
@@ -64,8 +64,9 @@ class ControladorReserva extends Controller
      */
     public function show($tid)
     {
-        $dades_reserva = Reserva::findOrFail($tid);
-        return view('mostra', compact('dades_reserva'));
+        $dades_reserva = Reserva::where('id', $tid)->get();
+        $dades_reserva = $dades_reserva[0];
+        return view('mostra-reserva', compact('dades_reserva'));
     }
 
     /**
@@ -76,8 +77,9 @@ class ControladorReserva extends Controller
      */
     public function edit($tid)
     {
-        $dades_reserva = Reserva::findOrFail($tid);
-        return view('actualitza', compact('dades_reserva'));
+        $dades_reserva = Reserva::where('id', $tid)->get();
+        $dades_reserva = $dades_reserva[0];
+        return view('modifica-reserva', compact('dades_reserva'));
     }
 
     /**
@@ -98,8 +100,8 @@ class ControladorReserva extends Controller
             'preu_dia' => 'required',
             'asseguranca' => 'required',
         ]);
-        Reserva::findOrFail($tid)->update($noves_dades_reserva);
-        return view('dashboard-reserva');
+        Reserva::where('id',$tid)->update($noves_dades_reserva);
+        return view('dashboard-reserves');
     }
 
     /**
@@ -110,7 +112,7 @@ class ControladorReserva extends Controller
      */
     public function destroy($tid)
     {
-        $Reserva = Reserva::findOrFail($tid)->delete();
-        return view('dashboard-reserva');
+        Reserva::where('id',$tid)->delete();
+        return view('dashboard-reserves');
     }
 }

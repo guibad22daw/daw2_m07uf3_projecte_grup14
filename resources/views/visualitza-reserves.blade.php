@@ -5,6 +5,7 @@
     <table class="table table-striped table-bordered table-hover">
         <thead>
             <tr class="table-primary">
+                <td>Núm. de reserva</td>
                 <td>NIF</td>
                 <td>Codi Habitació</td>
                 <td>Data Entrada</td>
@@ -16,8 +17,9 @@
             </tr>
         </thead>
         <tbody>
-            @foreach($dades_reserva as $reserva)
+            @foreach($dades_reserves as $reserva)
             <tr>
+                <td>{{$reserva->id}}</td>
                 <td>{{$reserva->dni}}</td>
                 <td>{{$reserva->codiHab}}</td>
                 <td>{{$reserva->data_entrada}}</td>
@@ -26,15 +28,15 @@
                 <td>{{$reserva->preu_dia}}</td>
                 <td>{{$reserva->asseguranca}}</td>
                 <td class="text-left">
-                    <a href="{{ route('reserves.edit', $reserva->codiHab)}}" class="btn btn-primary btn-sm">Edita</a>
-                    <form action="{{ route('reserves.destroy', $reserva->codiHab)}}" method="post" style="display: inline-block">
+                    <a href="{{ route('reserves.edit', $reserva->id)}}" class="btn btn-primary btn-sm">Edita</a>
+                    <form action="{{ route('reserves.destroy', $reserva->id)}}" method="post" style="display: inline-block">
                         @csrf
                         @method('DELETE')
                         <button class="btn btn-danger btn-sm" type="submit">
                             Esborra
                         </button>
                     </form>
-                    <a href="{{ route('reserves.show', $reserva->codiHab)}}" class="btn btn-info btn-sm">Mostra</a>
+                    <a href="{{ route('reserves.show', $reserva->id)}}" class="btn btn-info btn-sm">Mostra</a>
                 </td>
             </tr>
             @endforeach
