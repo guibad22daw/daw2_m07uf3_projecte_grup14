@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ControladorHabitacio;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Auth;
 
 /*
 |--------------------------------------------------------------------------
@@ -28,6 +29,9 @@ Route::get('/dashboard', function () {
 
 Route::group(['middleware' => 'auth'], function(){
     Route::get('/dashboard', function () {
+        if (Auth::user()->tipus !== 'Gerente') {
+            return redirect('dashboard-basic');
+        }
         return view('dashboard');       
     })->name('dashboard');
 
