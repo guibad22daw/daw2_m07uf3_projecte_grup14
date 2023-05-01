@@ -42,6 +42,17 @@ Route::group(['middleware' => 'auth'], function(){
         return view('dashboard-basic');
     })->name('dashboard-basic');
     
+    Route::middleware(['auth'])->group(function () {
+        Route::get('/users', function () {
+            if (Auth::user()->tipus === 'Gerent') {
+                // Si l'usuari és gerent, mostrar la vista d'usuaris
+                return view('users');
+            }
+            // Si l'usuari no é gerent, mostrar missatge d'error
+            return view('no-permissions')->with('dashboardUrl', route('dashboard-basic'));
+        });
+    });    
+    
     // Rutes per la gestió d'HABITACIONS
     Route::get('/habitacions/visualitza', 'ControladorHabitacio@visualitza')->name('habitacio.visualitza');
     Route::resource('/habitacions', 'ControladorHabitacio');
