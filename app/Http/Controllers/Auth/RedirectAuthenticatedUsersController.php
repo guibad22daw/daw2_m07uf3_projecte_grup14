@@ -9,11 +9,11 @@ class RedirectAuthenticatedUsersController extends Controller
 {
     public function home()
     {
-        if (auth()->user()->role == 'admin') {
+        if (auth()->user()->tipus == 'Gerent') {
             return redirect('/dashboard');
         }
-        elseif(auth()->user()->role == 'basic'){
-            return redirect('/dashboardbasic');
+        elseif(auth()->user()->tipus == 'Treballador'){
+            return redirect('/dashboard-basic');
         }        
         else{
             return auth()->logout();

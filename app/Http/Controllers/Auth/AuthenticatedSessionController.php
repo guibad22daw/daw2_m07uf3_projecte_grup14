@@ -40,10 +40,10 @@ class AuthenticatedSessionController extends Controller
         /** @var \App\Models\User $user **/
         $user->save();
 
-        if (auth()->user()->tipus == 'gerent') {
+        if (auth()->user()->tipus == 'Gerent') {
             return redirect()->intended(RouteServiceProvider::ADMIN_HOME);
 
-        } elseif (auth()->user()->tipus == 'treballador') {
+        } elseif (auth()->user()->tipus == 'Treballador') {
             return redirect()->intended(RouteServiceProvider::BASIC_HOME);
         } else {
             return auth()->logout();

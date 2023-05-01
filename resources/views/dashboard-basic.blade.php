@@ -1,7 +1,7 @@
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('Dashboard dels usuaris tipus bàsic') }}
+            {{ __('Dashboard del treballador') }}
         </h2>
     </x-slot>
 
@@ -9,8 +9,14 @@
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 bg-white border-b border-gray-200">
-                    <a href="{{ url('trebs/index_basic') }}">Treballadors: Visualització bàsica<a/>
-                </div>                               
+                    <a href="{{ url('habitacions') }}">Habitacions<a/>
+                </div>
+                <div class="p-6 bg-white border-b border-gray-200">
+                    <a href="{{ url('clients') }}">Clients<a/>
+                </div>
+                <div class="p-6 bg-white border-b border-gray-200">
+                    <a href="{{ url('reserves') }}">Reserves<a/>
+                </div>             
             </div>
         </div>
     </div>
