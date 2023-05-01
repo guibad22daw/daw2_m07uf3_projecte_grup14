@@ -20,7 +20,7 @@ class HabitacioSeeder extends Seeder
                 'codiHab' => '1234ABC',
                 'capacitat' => '2',
                 'mida' => 'Gran',
-                'pensio' => 'Completa',
+                'pensio' => 'Pensió completa',
                 'vistes' => 'Mar',
                 'llits' => 'Matrimoni',
                 'n_llits' => '1',

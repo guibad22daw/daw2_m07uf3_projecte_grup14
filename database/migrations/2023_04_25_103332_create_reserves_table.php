@@ -21,9 +21,9 @@ class CreateReservesTable extends Migration
             $table->foreign('codiHab')->references('codiHab')->on('habitacions')->onDelete('cascade')->onUpdate('cascade');
             $table->date('data_entrada');
             $table->date('data_sortida');
-            $table->string('pensio');
+            $table->enum('pensio', ['Només allotjament', 'Allotjament i esmorzar inclòs', 'Pensió completa']);
             $table->integer('preu_dia');
-            $table->string('asseguranca');
+            $table->enum('asseguranca', ['Franquícia fins 500 euros', 'Franquícia fins a 1000 euros', 'Sense franquícia']);
             $table->timestamps();
         });
     }

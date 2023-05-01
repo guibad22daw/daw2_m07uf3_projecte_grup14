@@ -17,10 +17,10 @@ class CreateHabitacionsTable extends Migration
             $table->string('codiHab',7)->unique();
             $table->primary('codiHab');
             $table->integer('capacitat');
-            $table->string('mida');
-            $table->string('vistes');
-            $table->string('pensio');
-            $table->string('llits');
+            $table->enum('mida', ['Petita', 'Normal', 'Gran']);
+            $table->enum('vistes', ['Interior', 'Mar', 'Muntanya']);
+            $table->enum('pensio', ['Només allotjament', 'Allotjament i esmorzar inclòs','Mitja pensió','Pensió completa']);
+            $table->enum('llits', ['Individuals', 'Matrimoni']);
             $table->string('n_llits');
             $table->boolean('terrassa');
             $table->boolean('calefaccio');

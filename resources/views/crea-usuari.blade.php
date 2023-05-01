@@ -32,8 +32,8 @@
             <div class="form-group">
                 <label for="tipus">Tipus</label>
                 <select name="tipus">
-                    <option value="gerent">Gerent</option>
-                    <option value="treballador">Treballador</option>
+                    <option value="Gerent">Gerent</option>
+                    <option value="Treballador">Treballador</option>
                 </select>
             </div>            
             <button type="submit" class="btn btn-block btn-primary">Envia</button>

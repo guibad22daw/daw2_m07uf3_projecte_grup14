@@ -22,7 +22,7 @@ class ReservaSeeder extends Seeder
                 'data_sortida' => '2023-04-29',
                 'pensio' => 'Només allotjament',
                 'preu_dia' => '80',
-                'asseguranca' => 'Franquícia fins 500 Euros',
+                'asseguranca' => 'Franquícia fins 500 euros',
             ],
         ];
         DB::table('reserves')->insert($llistaReserves);                  

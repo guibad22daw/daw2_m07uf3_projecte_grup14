@@ -28,11 +28,11 @@
             </div>
             <div class="form-group">
                 <label for="data_entrada">Data entrada</label>
-                <input type="text" class="form-control" name="data_entrada" />
+                <input type="date" class="form-control" name="data_entrada" />
             </div>
             <div class="form-group">
                 <label for="data_sortida">Data sortida</label>
-                <input type="text" class="form-control" name="data_sortida" />
+                <input type="date" class="form-control" name="data_sortida" />
             </div>
             <div class="form-group">
                 <label for="pensio">Pensió</label>
@@ -50,8 +50,8 @@
             <div class="form-group">
                 <label for="asseguranca">Assegurança</label>
                 <select name="asseguranca">
-                    <option value="Franquíca fins 500 Euros">Franquíca fins 500 Euros</option>
-                    <option value="Franquíca fins 1000 Euros">Franquíca fins 1000 Euros</option>
+                    <option value="Franquícia fins 500 euros">Franquícia fins 500 euros</option>
+                    <option value="Franquícia fins 1000 euros">Franquícia fins 1000 euros</option>
                     <option value="Sense franquícia">Sense franquícia</option>
                 </select>
             </div>

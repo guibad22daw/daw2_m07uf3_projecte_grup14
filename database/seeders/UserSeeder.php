@@ -18,13 +18,13 @@ class UserSeeder extends Seeder
         $llista_usuaris = [
             [
                 'nom_complet' => 'Guillem Badenas',
-                'tipus' => 'gerent',
+                'tipus' => 'Gerent',
                 'email' => 'guillem@happyflower.com',
                 'password' => Hash::make('FjeClot23#'),
             ],
             [
                 'nom_complet' => 'Judit Perea',
-                'tipus' => 'gerent',
+                'tipus' => 'Treballador',
                 'email' => 'judit@happyflower.com',
                 'password' => Hash::make('FjeClot23#'),
             ],

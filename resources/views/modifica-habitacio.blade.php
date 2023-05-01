@@ -27,7 +27,7 @@
 			</div>
 			<div class="form-group">           
 				<label for="mida">Mida</label>
-				<select name="mida">					
+				<select name="mida" class="form-control">					
 					<option value="Petita" {{ $dades_habitacio->mida == "Petita" ? 'selected' : ''}}>Petita</option>
 					<option value="Normal" {{ $dades_habitacio->mida == "Normal" ? 'selected' : ''}}>Normal</option>				    			    
 					<option value="Gran" {{ $dades_habitacio->mida == "Gran" ? 'selected' : ''}}>Gran</option>				    			    
@@ -35,7 +35,7 @@
 			</div>
 			<div class="form-group">           
 				<label for="vistes">Vistes</label>
-				<select name="vistes">					
+				<select name="vistes" class="form-control">					
 					<option value="Interior" {{ $dades_habitacio->vistes == "Interior" ? 'selected' : ''}}>Interior</option>
 					<option value="Mar" {{ $dades_habitacio->vistes == "Mar" ? 'selected' : ''}}>Mar</option>				    			    
 					<option value="Muntanya" {{ $dades_habitacio->vistes == "Muntanya" ? 'selected' : ''}}>Muntanya</option>				    			    
@@ -43,8 +43,8 @@
 			</div>
 			<div class="form-group">           
 				<label for="pensio">Pensió</label>
-				<select name="pensio">					
-					<option value="Allotjament" {{ $dades_habitacio->pensio == "Allotjament" ? 'selected' : ''}}>Només allotjament</option>
+				<select name="pensio" class="form-control">					
+					<option value="Només allotjament" {{ $dades_habitacio->pensio == "Només allotjament" ? 'selected' : ''}}>Només allotjament</option>
 					<option value="Allotjament i esmorzar inclòs" {{ $dades_habitacio->pensio == "Allotjament i esmorzar inclòs" ? 'selected' : ''}}>Allotjament i esmorzar inclòs</option>				    
 					<option value="Mitja pensió" {{ $dades_habitacio->pensio == "Mitja pensió" ? 'selected' : ''}}>Mitja pensió</option>				    
 					<option value="Pensió completa" {{ $dades_habitacio->pensio == "Pensió completa" ? 'selected' : ''}}>Pensió completa</option>				    
@@ -52,7 +52,7 @@
 			</div>
 			<div class="form-group">           
 				<label for="llits">Llits</label>
-				<select name="llits">					
+				<select name="llits" class="form-control">					
 					<option value="Individuals" {{ $dades_habitacio->llits == "Individuals" ? 'selected' : ''}}>Individuals</option>
 					<option value="Matrimoni" {{ $dades_habitacio->llits == "Matrimoni" ? 'selected' : ''}}>Matrimoni</option>				    			    
 				</select>
@@ -63,7 +63,7 @@
 			</div>    
 			<div class="form-group">           
 				<label for="terrassa">Terrassa</label>
-				<select name="terrassa">					
+				<select name="terrassa">		
 					<option value="1" {{ $dades_habitacio->terrassa == "1" ? 'selected' : ''}}>Sí</option>
 					<option value="0" {{ $dades_habitacio->terrassa == "0" ? 'selected' : ''}}>No</option>				    			    
 				</select>
