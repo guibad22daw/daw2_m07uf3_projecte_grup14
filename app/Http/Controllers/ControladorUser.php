@@ -16,13 +16,13 @@ class ControladorUser extends Controller
      */
     public function index()
     {
-        return view('dashboard-usuaris');
+        return view('usuaris/dashboard-usuaris');
     }
 
     public function visualitza()
     {
         $dades_users = User::all();
-        return view('visualitza-usuaris', compact('dades_users'));
+        return view('usuaris/visualitza-usuaris', compact('dades_users'));
     }
 
     /**
@@ -32,7 +32,7 @@ class ControladorUser extends Controller
      */
     public function create()
     {
-        return view('crea-usuari');
+        return view('usuaris/crea-usuari');
     }
 
     /**
@@ -60,7 +60,7 @@ class ControladorUser extends Controller
         $user->save();
     
         #return redirect('/dashboard')->with('completed', 'User creat!');
-        return view('dashboard-usuaris');
+        return redirect()->route("user.visualitza")->with('message','Usuari creat amb éxit.');
     }
 
     /**
@@ -72,7 +72,7 @@ class ControladorUser extends Controller
     public function show($id)
     {
         $dades_user = User::findOrFail($id);
-        return view('mostra-usuari', compact('dades_user'));
+        return view('usuaris/mostra-usuari', compact('dades_user'));
     }
 
     /**
@@ -84,7 +84,7 @@ class ControladorUser extends Controller
     public function edit($id)
     {
         $dades_user = User::findOrFail($id);
-        return view('modifica-usuari', compact('dades_user'));
+        return view('usuaris/modifica-usuari', compact('dades_user'));
     }
 
     /**
@@ -115,7 +115,7 @@ class ControladorUser extends Controller
         }
         $user->save(); 
 
-        return view('dashboard-usuaris');
+        return redirect()->route("user.visualitza")->with('message','Usuari modificat amb éxit.');
     }
 
     /**
@@ -127,6 +127,6 @@ class ControladorUser extends Controller
     public function destroy($id)
     {
         $User = User::findOrFail($id)->delete();
-        return view('dashboard-usuaris');
+        return redirect()->route("user.visualitza")->with('message','Usuari esborrat amb éxit.');
     }
 }

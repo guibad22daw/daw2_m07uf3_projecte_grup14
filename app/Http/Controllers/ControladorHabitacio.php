@@ -14,13 +14,13 @@ class ControladorHabitacio extends Controller
      */
     public function index()
     {
-        return view('dashboard-habitacions');
+        return view('habitacions/dashboard-habitacions');
     }
 
     public function visualitza()
     {
         $dades_habitacions = Habitacio::all();
-        return view('visualitza-habitacions', compact('dades_habitacions'));
+        return view('habitacions/visualitza-habitacions', compact('dades_habitacions'));
     }
 
     /**
@@ -30,7 +30,7 @@ class ControladorHabitacio extends Controller
      */
     public function create()
     {
-        return view('crea-habitacio');
+        return view('habitacions/crea-habitacio');
     }
 
     /**
@@ -56,8 +56,8 @@ class ControladorHabitacio extends Controller
             'animals' => 'required',
         ]);
         $Habitacio = Habitacio::create($novaHabitacio);
-        #return redirect('/dashboard')->with('completed', 'Habitacio creat!');
-        return view('dashboard');
+       //return redirect('/dashboard')->with('completed', 'Habitacio creat!');
+        return redirect()->route("habitacio.visualitza")->with('message','Habitació afegida amb éxit.');
     }
 
     /**
@@ -69,7 +69,7 @@ class ControladorHabitacio extends Controller
     public function show($codiHab)
     {
         $dades_habitacio = Habitacio::findOrFail($codiHab);
-        return view('mostra-habitacio', compact('dades_habitacio'));
+        return view('habitacions/mostra-habitacio', compact('dades_habitacio'));
     }
 
     /**
@@ -81,7 +81,7 @@ class ControladorHabitacio extends Controller
     public function edit($codiHab)
     {
         $dades_habitacio = Habitacio::findOrFail($codiHab);
-        return view('modifica-habitacio', compact('dades_habitacio'));
+        return view('habitacions/modifica-habitacio', compact('dades_habitacio'));
     }
 
     /**
@@ -108,7 +108,7 @@ class ControladorHabitacio extends Controller
             'animals' => 'required',
         ]);
         Habitacio::findOrFail($codiHab)->update($noves_dades_habitacio);
-        return view('dashboard');
+        return redirect()->route("habitacio.visualitza")->with('message','Habitació modificada amb éxit.');
     }
 
     /**
@@ -120,7 +120,7 @@ class ControladorHabitacio extends Controller
     public function destroy($codiHab)
     {
         $Habitacio = Habitacio::findOrFail($codiHab)->delete();
-        return view('dashboard');
+        return redirect()->route("habitacio.visualitza")->with('message','Habitació eliminada amb éxit.');
     }
 
 }

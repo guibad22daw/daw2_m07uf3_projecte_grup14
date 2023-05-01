@@ -15,13 +15,13 @@ class ControladorReserva extends Controller
     public function index()
     {
         $dades_reserva = Reserva::all();
-        return view('dashboard-reserves', compact('dades_reserva'));
+        return view('reserves/dashboard-reserves', compact('dades_reserva'));
     }
 
     public function visualitza()
     {
         $dades_reserves = Reserva::all();
-        return view('visualitza-reserves', compact('dades_reserves'));
+        return view('reserves/visualitza-reserves', compact('dades_reserves'));
     }
     
     /**
@@ -31,7 +31,7 @@ class ControladorReserva extends Controller
      */
     public function create()
     {
-        return view('crea-reserva');
+        return view('reserves/crea-reserva');
     }
 
     /**
@@ -52,7 +52,7 @@ class ControladorReserva extends Controller
             'asseguranca' => 'required',
         ]);
         $Reserva = Reserva::create($novaReserva);
-        return redirect('/reserves')->with('completed', 'Reserva creat!');
+        return redirect()->route("reserva.visualitza")->with('message','Reserva creada amb éxit.');
         #return view('dashboard-reserves');
     }
 
@@ -66,7 +66,7 @@ class ControladorReserva extends Controller
     {
         $dades_reserva = Reserva::where('rid', $rid)->get();
         $dades_reserva = $dades_reserva[0];
-        return view('mostra-reserva', compact('dades_reserva'));
+        return view('reserves/mostra-reserva', compact('dades_reserva'));
     }
 
     /**
@@ -79,7 +79,7 @@ class ControladorReserva extends Controller
     {
         $dades_reserva = Reserva::where('rid', $rid)->get();
         $dades_reserva = $dades_reserva[0];
-        return view('modifica-reserva', compact('dades_reserva'));
+        return view('reserves/modifica-reserva', compact('dades_reserva'));
     }
 
     /**
@@ -101,7 +101,7 @@ class ControladorReserva extends Controller
             'asseguranca' => 'required',
         ]);
         Reserva::where('rid',$rid)->update($noves_dades_reserva);
-        return view('dashboard-reserves');
+        return redirect()->route("reserva.visualitza")->with('message','Reserva modificada amb éxit.');
     }
 
     /**
@@ -113,6 +113,6 @@ class ControladorReserva extends Controller
     public function destroy($rid)
     {
         Reserva::where('rid',$rid)->delete();
-        return view('dashboard-reserves');
+        return redirect()->route("reserva.visualitza")->with('message','Reserva eliminada amb éxit.');
     }
 }

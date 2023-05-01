@@ -14,7 +14,7 @@ class ControladorClient extends Controller
      */
     public function index()
     {
-        return view('dashboard-clients');
+        return view('clients/dashboard-clients');
     }
 
     /**
@@ -24,13 +24,13 @@ class ControladorClient extends Controller
      */
     public function create()
     {
-        return view('crea-client');
+        return view('clients/crea-client');
     }
 
     public function visualitza()
     {
         $dades_clients = Client::all();
-        return view('visualitza-clients', compact('dades_clients'));
+        return view('clients/visualitza-clients', compact('dades_clients'));
     }
 
     /**
@@ -54,7 +54,7 @@ class ControladorClient extends Controller
             'num_targeta' => 'required',
         ]);
         $Client = Client::create($nouClient);
-        return redirect('/clients')->with('completed', 'Client creat!');
+        return redirect()->route("client.visualitza")->with('message','Client creat amb éxit.');
     }
 
     /**
@@ -66,7 +66,7 @@ class ControladorClient extends Controller
     public function show($dni)
     {
         $dades_client = Client::findOrFail($dni);
-        return view('mostra-client', compact('dades_client'));
+        return view('clients/mostra-client', compact('dades_client'));
     }
 
     /**
@@ -78,7 +78,7 @@ class ControladorClient extends Controller
     public function edit($dni)
     {
         $dades_client = Client::findOrFail($dni);
-        return view('modifica-client', compact('dades_client'));
+        return view('clients/modifica-client', compact('dades_client'));
     }
 
     /**
@@ -103,7 +103,7 @@ class ControladorClient extends Controller
             'num_targeta' => 'required',
         ]);
         Client::findOrFail($dni)->update($noves_dades_client);
-        return redirect('/clients')->with('completed', 'Client modificat!');
+        return redirect()->route("client.visualitza")->with('message','Client modificat amb éxit.');
     }
 
     /**
@@ -115,6 +115,6 @@ class ControladorClient extends Controller
     public function destroy($dni)
     {
         $Client = Client::findOrFail($dni)->delete();
-        return view('dashboard-clients');
+        return redirect()->route("client.visualitza")->with('message','Client eliminat amb éxit.');
     }
 }

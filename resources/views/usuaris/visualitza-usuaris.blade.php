@@ -1,5 +1,8 @@
 @extends('disseny')
 @section('content')
+@if(session('message'))
+  {{session('message')}}
+@endif
 <h1>Llista d'usuari</h1>
 <div class="mt-5">
   <table class="table table-striped table-bordered table-hover">
