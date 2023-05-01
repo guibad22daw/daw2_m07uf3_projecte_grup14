@@ -29,14 +29,17 @@ Route::get('/dashboard', function () {
 
 Route::group(['middleware' => 'auth'], function(){
     Route::get('/dashboard', function () {
-        if (Auth::user()->tipus !== 'Gerente') {
+        if (Auth::user()->tipus !== 'Gerent') {
             return redirect('dashboard-basic');
         }
         return view('dashboard');       
     })->name('dashboard');
 
     Route::get('/dashboard-basic', function () {
-        return view('dashboard-basic');       
+        if (Auth::user()->tipus === 'Gerent') {
+            return redirect('dashboard');
+        }
+        return view('dashboard-basic');
     })->name('dashboard-basic');
     
     // Rutes per la gestió d'HABITACIONS
