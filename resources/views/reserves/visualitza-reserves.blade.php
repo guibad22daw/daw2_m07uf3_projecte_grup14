@@ -1,8 +1,5 @@
 @extends('disseny')
 @section('content')
-@if(session('message'))
-  {{session('message')}}
-@endif
 <h1>Llista reserves</h1>
 <div class="mt-5">
     <table class="table table-striped table-bordered table-hover">
@@ -49,4 +46,13 @@
         <a href="{{ url('dashboard') }}">Torna al dashboard</a>
     </div>
 </div>
+@if(session('message'))
+<script>
+    var alerta = function() {
+        alert("{{session('message')}}");
+    }
+
+    window.onload = alerta;
+</script>
+@endif
 @endsection

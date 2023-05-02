@@ -113,6 +113,6 @@ class ControladorReserva extends Controller
     public function destroy($rid)
     {
         Reserva::where('rid',$rid)->delete();
-        return redirect()->route("reserva.visualitza")->with('message','Reserva eliminada amb éxit.');
+        return redirect()->route("reserva.visualitza")->with('message','Reserva esborrada amb éxit.');
     }
 }

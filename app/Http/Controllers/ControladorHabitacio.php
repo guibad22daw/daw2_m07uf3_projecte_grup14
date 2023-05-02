@@ -57,7 +57,7 @@ class ControladorHabitacio extends Controller
         ]);
         $Habitacio = Habitacio::create($novaHabitacio);
        //return redirect('/dashboard')->with('completed', 'Habitacio creat!');
-        return redirect()->route("habitacio.visualitza")->with('message','Habitació afegida amb éxit.');
+        return redirect()->route("habitacio.visualitza")->with('message','Habitació creada amb éxit.');
     }
 
     /**
@@ -120,7 +120,7 @@ class ControladorHabitacio extends Controller
     public function destroy($codiHab)
     {
         $Habitacio = Habitacio::findOrFail($codiHab)->delete();
-        return redirect()->route("habitacio.visualitza")->with('message','Habitació eliminada amb éxit.');
+        return redirect()->route("habitacio.visualitza")->with('message','Habitació esborrada amb éxit.');
     }
 
 }

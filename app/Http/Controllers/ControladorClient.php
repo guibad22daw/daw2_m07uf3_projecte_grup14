@@ -115,6 +115,6 @@ class ControladorClient extends Controller
     public function destroy($dni)
     {
         $Client = Client::findOrFail($dni)->delete();
-        return redirect()->route("client.visualitza")->with('message','Client eliminat amb éxit.');
+        return redirect()->route("client.visualitza")->with('message','Client esborrat amb éxit.');
     }
 }
