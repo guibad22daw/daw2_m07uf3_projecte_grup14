@@ -12,8 +12,20 @@
 
                 <!-- Navigation Links -->
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                    <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
+                    <x-nav-link :href="route('dashboard')" :active="url()->current() === route('dashboard')">
                         {{ __('Dashboard') }}
+                    </x-nav-link>
+                    <x-nav-link :href="url('habitacions')" :active="url()->current() === url('habitacions')">
+                        {{ __('Habitacions') }}
+                    </x-nav-link>
+                    <x-nav-link :href="url('clients')" :active="url()->current() === url('clients')">
+                        {{ __('Clients') }}
+                    </x-nav-link>
+                    <x-nav-link :href="url('reserves')" :active="url()->current() === url('reserves')">
+                        {{ __('Reserves') }}
+                    </x-nav-link>
+                    <x-nav-link :href="url('usuaris')" :active="url()->current() === url('usuaris')">
+                        {{ __('Usuaris') }}
                     </x-nav-link>
                 </div>
             </div>
@@ -65,6 +77,18 @@
         <div class="pt-2 pb-3 space-y-1">
             <x-responsive-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
                 {{ __('Dashboard') }}
+            </x-responsive-nav-link>
+            <x-responsive-nav-link :href="url('habitacions')" :active="request()->routeIs('habitacions')">
+                {{ __('Habitacions') }}
+            </x-responsive-nav-link>
+            <x-responsive-nav-link :href="url('clients')" :active="request()->routeIs('clients')">
+                {{ __('Clients') }}
+            </x-responsive-nav-link>
+            <x-responsive-nav-link :href="url('reserves')" :active="request()->routeIs('reserves')">
+                {{ __('Reserves') }}
+            </x-responsive-nav-link>
+            <x-responsive-nav-link :href="url('usuaris')" :active="request()->routeIs('usuaris')">
+                {{ __('Usuaris') }}
             </x-responsive-nav-link>
         </div>
 
