@@ -4,7 +4,6 @@
 <p class="mt-3 text-center">Emplena tots els camps del formulari</p>
 <div class="container">
     <div class="card mt-5 shadow-sm sm:rounded-lg" style="border-radius: 20px">
-
         <div class="card-body">
             @if($errors->any())
                 <div class="alert alert-danger">
