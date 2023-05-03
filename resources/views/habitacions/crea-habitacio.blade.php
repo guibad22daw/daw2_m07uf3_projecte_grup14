@@ -1,21 +1,21 @@
 @extends('disseny')
 @section('content')
-<div class="card mt-5">
-    <div class="card-header">
-        Afegeix una nova habitació
-    </div>
+<h2 class="mt-5 text-center">Creació d'una nova habitació</h2>
+<p class="mt-3 text-center">Emplena tots els camps del formulari</p>
+<div class="container">
+    <div class="card mt-5 shadow-sm sm:rounded-lg" style="border-radius: 20px">
 
-    <div class="card-body">
-        @if ($errors->any())
-        <div class="alert alert-danger">
-            <ul>
-                @foreach ($errors->all() as $error)
-                <li>{{ $error }}</li>
-                @endforeach
-            </ul>
-        </div>
-        @endif
-        <form method="post" action="/habitacions">
+        <div class="card-body">
+            @if($errors->any())
+                <div class="alert alert-danger">
+                    <ul>
+                        @foreach($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+            @endif
+            <form method="post" action="/habitacions">
             @csrf
             <!-- https://laravel.com/docs/10.x/csrf -->
             <div class="form-group">
@@ -24,11 +24,18 @@
             </div>
             <div class="form-group">
                 <label for="capacitat">Capacitat</label>
-                <input type="number" class="form-control" name="capacitat" min="1" max="6"/>
+                <select class="form-control" name="capacitat">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                </select>
             </div>
             <div class="form-group">
                 <label for="mida">Mida</label>
-                <select name="mida">
+                <select class="form-control" name="mida">
                     <option value="Petita">Petita</option>
                     <option value="Normal">Normal</option>
                     <option value="Gran">Gran</option>
@@ -36,7 +43,7 @@
             </div>
             <div class="form-group">
                 <label for="vistes">Vistes</label>
-                <select name="vistes">
+                <select class="form-control" name="vistes">
                     <option value="Interior">interior</option>
                     <option value="Mar">Mar</option>
                     <option value="Muntanya">Muntanya</option>
@@ -44,7 +51,7 @@
             </div>
             <div class="form-group">
                 <label for="pensio">Pensió</label>
-                <select name="pensio">
+                <select class="form-control" name="pensio">
                     <option value="Només allotjament">Només allotjament</option>
                     <option value="Allotjament i esmorzar inclòs">Allotjament i esmorzar inclòs</option>
                     <option value="Mitja pensió">Mitja pensió</option>
@@ -53,7 +60,7 @@
             </div>
             <div class="form-group">
                 <label for="llits">Llits</label>
-                <select name="llits">
+                <select class="form-control" name="llits">
                     <option value="Individuals">Individuals</option>
                     <option value="Matrimoni">Matrimoni</option>
                 </select>
@@ -64,44 +71,49 @@
             </div>                                   
             <div class="form-group">
                 <label for="terrassa">Terrassa</label>
-                <select name="terrassa">
+                <select class="form-control" name="terrassa">
                     <option value="1">Sí</option>
                     <option value="0">No</option>
                 </select>
             </div>
             <div class="form-group">
                 <label for="calefaccio">Calefacció</label>
-                <select name="calefaccio">
+                <select class="form-control" name="calefaccio">
                     <option value="1">Sí</option>
                     <option value="0">No</option>
                 </select>
             </div>
             <div class="form-group">
                 <label for="aire_acondicionat">Aire acondicionat</label>
-                <select name="aire_acondicionat">
+                <select class="form-control" name="aire_acondicionat">
                     <option value="1">Sí</option>
                     <option value="0">No</option>
                 </select>
             </div>
             <div class="form-group">
                 <label for="nens">Nens</label>
-                <select name="nens">
+                <select class="form-control" name="nens">
                     <option value="1">Sí</option>
                     <option value="0">No</option>
                 </select>
             </div>
             <div class="form-group">
                 <label for="animals">Animals</label>
-                <select name="animals">
+                <select class="form-control" name="animals">
                     <option value="1">Sí</option>
                     <option value="0">No</option>
                 </select>
             </div>
-            <button type="submit" class="btn btn-block btn-primary">Envia</button>
+            <button type="submit" class="btn btn-block btn-primary" style="border-radius: 15px;">Envia</button>
         </form>
+        </div>
     </div>
-    <div class="p-6 bg-white border-b border-gray-200">
-        <a href="{{ url('dashboard') }}">Torna al dashboard<a />
+    <br />
+    <div style="display: flex; align-items: center; justify-content: center; gap: 20px;" class="mt-3">
+        <a href="{{ url('habitacions') }}" style="width: 200px; border-radius: 15px;" class="btn btn-primary btn">
+            Torna al dashboard
+        </a>
     </div>
+    <br><br>
 </div>
 @endsection
