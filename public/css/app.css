@@ -1430,3 +1430,6 @@ select {
   }
 }
 
+td{
+  vertical-align: middle !important;
+ }
