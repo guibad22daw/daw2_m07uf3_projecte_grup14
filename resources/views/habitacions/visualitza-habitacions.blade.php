@@ -1,17 +1,19 @@
 @extends('disseny')
 @section('content')
-<h1>Llista d'habitacions</h1>
-<div class="mt-5">
-  <table class="table table-striped table-bordered table-hover">
+<h2 class="mt-5 text-center">Llista d'habitacions</h2>
+<p class="mt-3 text-center">Visualitza les dades de totes les habitacions</p>
+<div class="container">
+  <div class="mt-5">
+  <table class="table table-bordered" style="width: 85%; background-color:white; border-radius:15px">
     <thead>
-      <tr class="table-primary">
+      <tr class="table-info" style="text-align:center; font-weight: bold;">
         <td>Codi Habitació</td>
         <td>Capacitat</td>
         <td>Mida</td>
         <td>Pensió</td>
         <td>Vistes</td>
         <td>Llits</td>
-        <td>Núm. llits</td>
+        <td>Nombre de llits</td>
         <td>Terrassa</td>
         <td>Calefacció</td>
         <td>Aire acondicionat</td>
@@ -22,7 +24,7 @@
     </thead>
     <tbody>
       @foreach($dades_habitacions as $habitacio)
-      <tr>
+      <tr style="text-align:center;">
         <td>{{$habitacio->codiHab}}</td>
         <td>{{$habitacio->capacitat}}</td>
         <td>{{$habitacio->mida}}</td>
@@ -36,22 +38,25 @@
         <td>{{$habitacio->nens == "1" ? 'Sí':'No'}}</td>
         <td>{{$habitacio->animals == "1" ? 'Sí':'No'}}</td>
         <td class="text-left">
-          <a href="{{ route('habitacions.edit', $habitacio->codiHab)}}" class="btn btn-primary btn-sm">Edita</a>
+          <a href="{{ route('habitacions.edit', $habitacio->codiHab)}}" style="border-radius: 10px" class="btn btn-primary btn-sm">Edita</a>
           <form action="{{ route('habitacions.destroy', $habitacio->codiHab)}}" method="post" style="display: inline-block">
             @csrf
             @method('DELETE')
-            <button class="btn btn-danger btn-sm" type="submit">
+            <button class="btn btn-danger btn-sm mt-1"  style="border-radius: 10px" type="submit">
               Esborra
             </button>
           </form>
-          <a href="{{ route('habitacions.show', $habitacio->codiHab)}}" class="btn btn-info btn-sm">Mostra</a>
+          <a href="{{ route('habitacions.show', $habitacio->codiHab)}}" style="border-radius: 10px" class="btn btn-info btn-sm mt-1">Mostra</a>
         </td>
       </tr>
       @endforeach
     </tbody>
   </table>
-  <div class="p-6 bg-white border-b border-gray-200">
-    <a href="{{ url('dashboard') }}">Torna al dashboard<a />
+  <div style="display: flex; align-items: center; justify-content: center; gap: 20px;" class="mt-3">
+        <a href="{{ url('habitacions') }}" style="width: 200px; border-radius: 15px;" class="btn btn-primary btn">
+            Torna al dashboard
+        </a>
+    </div>
   </div>
 </div>
 @if(session('message'))
