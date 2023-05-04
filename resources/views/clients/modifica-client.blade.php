@@ -16,7 +16,7 @@
         @endif
         <form method="post" action="{{ route('clients.update', $dades_client->dni) }}">
 			@csrf
-            @method('PATCH')
+            @method('PUT')
             <div class="form-group">           
 				<label for="nif">NIF</label>
 				<input type="text" class="form-control" name="dni" value="{{ $dades_client->dni }}" />

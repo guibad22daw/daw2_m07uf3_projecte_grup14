@@ -16,7 +16,7 @@
         @endif
         <form method="post" action="{{ route('reserves.update', $dades_reserva->rid) }}">
 			@csrf
-            @method('PATCH')
+            @method('PUT')
             <div class="form-group">           
 				<label for="dni">NIF</label>
 				<input type="text" class="form-control" name="dni" value="{{ $dades_reserva->dni }}" readonly/>

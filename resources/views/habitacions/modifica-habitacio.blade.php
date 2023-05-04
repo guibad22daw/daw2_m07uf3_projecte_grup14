@@ -16,7 +16,7 @@
         @endif
         <form method="post" action="{{ route('habitacions.update', $dades_habitacio->codiHab) }}">
 			@csrf
-            @method('PATCH')
+            @method('PUT')
             <div class="form-group">           
 				<label for="codiHab">Codi habitació</label>
 				<input type="text" class="form-control" name="codiHab" value="{{ $dades_habitacio->codiHab }}" />

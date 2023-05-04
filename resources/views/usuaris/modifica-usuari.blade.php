@@ -16,7 +16,7 @@
         @endif
         <form method="post" action="{{ route('user.update', $dades_user->id) }}">
 			@csrf
-            @method('PATCH')
+            @method('PUT')
             <div class="form-group">           
 				<label for="nom_complet">Nom i cognoms</label>
 				<input type="text" class="form-control" name="nom_complet" value="{{ $dades_user->nom_complet }}" />
