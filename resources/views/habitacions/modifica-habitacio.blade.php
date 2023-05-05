@@ -19,20 +19,29 @@
 					@csrf
 					@method('PUT')
 					<div class="form-group">
-						<label for="codiHab">Codi habitació</label>
+						<label for="codiHab">Codi d'habitació</label>
 						<input type="text" class="form-control" name="codiHab" value="{{ $dades_habitacio->codiHab }}" />
 					</div>
-					<div class="form-group">
-						<label for="cognoms">Capacitat</label>
-						<input type="text" class="form-control" name="capacitat" value="{{ $dades_habitacio->capacitat }}" />
-					</div>
-					<div class="form-group">
-						<label for="mida">Mida</label>
-						<select name="mida" class="form-control">
-							<option value="Petita" {{ $dades_habitacio->mida == "Petita" ? 'selected' : ''}}>Petita</option>
-							<option value="Normal" {{ $dades_habitacio->mida == "Normal" ? 'selected' : ''}}>Normal</option>
-							<option value="Gran" {{ $dades_habitacio->mida == "Gran" ? 'selected' : ''}}>Gran</option>
-						</select>
+					<div class="row form-group">
+						<div class="col">
+							<label for="mida">Mida</label>
+							<select name="mida" class="form-control">
+								<option value="Petita" {{ $dades_habitacio->mida == "Petita" ? 'selected' : ''}}>Petita</option>
+								<option value="Normal" {{ $dades_habitacio->mida == "Normal" ? 'selected' : ''}}>Normal</option>
+								<option value="Gran" {{ $dades_habitacio->mida == "Gran" ? 'selected' : ''}}>Gran</option>
+							</select>
+						</div>
+						<div class="col">
+							<label for="cognoms">Capacitat</label>
+							<select name="capacitat" class="form-control">
+								<option value="1" {{ $dades_habitacio->mida == "1" ? 'selected' : ''}}>1</option>
+								<option value="2" {{ $dades_habitacio->mida == "2" ? 'selected' : ''}}>2</option>
+								<option value="3" {{ $dades_habitacio->mida == "3" ? 'selected' : ''}}>3</option>
+								<option value="4" {{ $dades_habitacio->mida == "4" ? 'selected' : ''}}>4</option>
+								<option value="5" {{ $dades_habitacio->mida == "5" ? 'selected' : ''}}>5</option>
+								<option value="6" {{ $dades_habitacio->mida == "6" ? 'selected' : ''}}>6</option>
+							</select>
+						</div>
 					</div>
 					<div class="form-group">
 						<label for="vistes">Vistes</label>
@@ -69,34 +78,39 @@
 							<option value="0" {{ $dades_habitacio->terrassa == "0" ? 'selected' : ''}}>No</option>
 						</select>
 					</div>
-					<div class="form-group">
-						<label for="calefaccio">Calefaccio</label>
-						<select name="calefaccio" class="form-control">
-							<option value="1" {{ $dades_habitacio->calefaccio == "1" ? 'selected' : ''}}>Sí</option>
-							<option value="0" {{ $dades_habitacio->calefaccio == "0" ? 'selected' : ''}}>No</option>
-						</select>
+					<div class="row form-group">
+						<div class="col">
+							<label for="calefaccio">Calefacció</label>
+							<select name="calefaccio" class="form-control">
+								<option value="1" {{ $dades_habitacio->calefaccio == "1" ? 'selected' : ''}}>Sí</option>
+								<option value="0" {{ $dades_habitacio->calefaccio == "0" ? 'selected' : ''}}>No</option>
+							</select>
+						</div>
+						<div class="col">
+							<label for="aire_acondicionat">Aire acondicionat</label>
+							<select name="aire_acondicionat" class="form-control">
+								<option value="1" {{ $dades_habitacio->aire_acondicionat == "1" ? 'selected' : ''}}>Sí</option>
+								<option value="0" {{ $dades_habitacio->aire_acondicionat == "0" ? 'selected' : ''}}>No</option>
+							</select>
+						</div>
 					</div>
-					<div class="form-group">
-						<label for="aire_acondicionat">Aire acondicionat</label>
-						<select name="aire_acondicionat" class="form-control">
-							<option value="1" {{ $dades_habitacio->aire_acondicionat == "1" ? 'selected' : ''}}>Sí</option>
-							<option value="0" {{ $dades_habitacio->aire_acondicionat == "0" ? 'selected' : ''}}>No</option>
-						</select>
+					<div class="row">
+						<div class="col">
+							<label for="nens">Nens</label>
+							<select name="nens" class="form-control">
+								<option value="1" {{ $dades_habitacio->nens == "1" ? 'selected' : ''}}>Sí</option>
+								<option value="0" {{ $dades_habitacio->nens == "0" ? 'selected' : ''}}>No</option>
+							</select>
+						</div>
+						<div class="col">
+							<label for="animals">Animals</label>
+							<select name="animals" class="form-control">
+								<option value="1" {{ $dades_habitacio->animals == "1" ? 'selected' : ''}}>Sí</option>
+								<option value="0" {{ $dades_habitacio->animals == "0" ? 'selected' : ''}}>No</option>
+							</select>
+						</div>
 					</div>
-					<div class="form-group">
-						<label for="nens">Nens</label>
-						<select name="nens" class="form-control">
-							<option value="1" {{ $dades_habitacio->nens == "1" ? 'selected' : ''}}>Sí</option>
-							<option value="0" {{ $dades_habitacio->nens == "0" ? 'selected' : ''}}>No</option>
-						</select>
-					</div>
-					<div class="form-group">
-						<label for="animals">Animals</label>
-						<select name="animals" class="form-control">
-							<option value="1" {{ $dades_habitacio->animals == "1" ? 'selected' : ''}}>Sí</option>
-							<option value="0" {{ $dades_habitacio->animals == "0" ? 'selected' : ''}}>No</option>
-						</select>
-					</div>
+					<br/>
 					<button type="submit" class="btn btn-block btn-primary">Envia</button>
 				</form>
 			</div>

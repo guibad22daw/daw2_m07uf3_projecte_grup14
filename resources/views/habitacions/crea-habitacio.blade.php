@@ -22,29 +22,31 @@
                         <label for="codiHab">Codi d'habitació</label>
                         <input type="text" class="form-control" name="codiHab" />
                     </div>
-                    <div class="form-group">
-                        <label for="capacitat">Capacitat</label>
-                        <select class="form-control" name="capacitat">
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="4">4</option>
-                            <option value="5">5</option>
-                            <option value="6">6</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label for="mida">Mida</label>
-                        <select class="form-control" name="mida">
-                            <option value="Petita">Petita</option>
-                            <option value="Normal">Normal</option>
-                            <option value="Gran">Gran</option>
-                        </select>
+                    <div class="row form-group">
+                        <div class="col">
+                            <label for="mida">Mida</label>
+                            <select class="form-control" name="mida">
+                                <option value="Petita">Petita</option>
+                                <option value="Normal">Normal</option>
+                                <option value="Gran">Gran</option>
+                            </select>
+                        </div>
+                        <div class="col">
+                            <label for="capacitat">Capacitat</label>
+                            <select class="form-control" name="capacitat">
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                                <option value="6">6</option>
+                            </select>
+                        </div>
                     </div>
                     <div class="form-group">
                         <label for="vistes">Vistes</label>
                         <select class="form-control" name="vistes">
-                            <option value="Interior">interior</option>
+                            <option value="Interior">Interior</option>
                             <option value="Mar">Mar</option>
                             <option value="Muntanya">Muntanya</option>
                         </select>
@@ -76,34 +78,39 @@
                             <option value="0">No</option>
                         </select>
                     </div>
-                    <div class="form-group">
-                        <label for="calefaccio">Calefacció</label>
-                        <select class="form-control" name="calefaccio">
-                            <option value="1">Sí</option>
-                            <option value="0">No</option>
-                        </select>
+                    <div class="row form-group">
+                        <div class="col">
+                            <label for="calefaccio">Calefacció</label>
+                            <select class="form-control" name="calefaccio">
+                                <option value="1">Sí</option>
+                                <option value="0">No</option>
+                            </select>
+                        </div>
+                        <div class="col">
+                            <label for="aire_acondicionat">Aire acondicionat</label>
+                            <select class="form-control" name="aire_acondicionat">
+                                <option value="1">Sí</option>
+                                <option value="0">No</option>
+                            </select>
+                        </div>
                     </div>
-                    <div class="form-group">
-                        <label for="aire_acondicionat">Aire acondicionat</label>
-                        <select class="form-control" name="aire_acondicionat">
-                            <option value="1">Sí</option>
-                            <option value="0">No</option>
-                        </select>
+                    <div class="row form-group">
+                        <div class="col">
+                            <label for="nens">Nens</label>
+                            <select class="form-control" name="nens">
+                                <option value="1">Sí</option>
+                                <option value="0">No</option>
+                            </select>
+                        </div>
+                        <div class="col">
+                            <label for="animals">Animals</label>
+                            <select class="form-control" name="animals">
+                                <option value="1">Sí</option>
+                                <option value="0">No</option>
+                            </select>
+                        </div>
                     </div>
-                    <div class="form-group">
-                        <label for="nens">Nens</label>
-                        <select class="form-control" name="nens">
-                            <option value="1">Sí</option>
-                            <option value="0">No</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label for="animals">Animals</label>
-                        <select class="form-control" name="animals">
-                            <option value="1">Sí</option>
-                            <option value="0">No</option>
-                        </select>
-                    </div>
+                    <br/>
                     <button type="submit" class="btn btn-block btn-primary" style="border-radius: 15px;">Envia</button>
                 </form>
             </div>
