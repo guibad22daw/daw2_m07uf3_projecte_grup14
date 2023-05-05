@@ -5,6 +5,7 @@
 1. Prevent padding and border from affecting element width. (https://github.com/mozdevs/cssremedy/issues/4)
 2. Allow adding a border to an element by just adding a border-width. (https://github.com/tailwindcss/tailwindcss/pull/116)
 */
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap');
 
 *,
 ::before,
@@ -1084,7 +1085,7 @@ select {
 }
 
 .border-indigo-400 {
-  --tw-border-opacity: 1;
+  --tw-border-opacity: 1!important;
   border-color: rgb(129 140 248 / var(--tw-border-opacity));
 }
 
@@ -1780,4 +1781,11 @@ tr:not(:last-child) {
 .table thead th {
   vertical-align: middle!important;
   font-weight: 600;
+}
+
+.navLinks a {
+  font-family: 'Nunito'!important;
+  font-weight: 600!important;
+  outline: none!important;
+  text-decoration: none!important;
 }
