@@ -6,15 +6,15 @@
     <table class="table mt-5 shadow-sm sm:rounded-lg" style="width: 100%; background-color:white; border-radius:20px">
         <thead>
             <tr style="text-align:center; background-color: #bee5eb ;font-weight: bold; border-radius: 20px">
-                <td>Núm. de reserva</td>
-                <td>NIF</td>
-                <td>Codi Habitació</td>
-                <td>Data Entrada</td>
-                <td>Data Sortida</td>
-                <td>Pensió</td>
-                <td>Preu dia</td>
-                <td>Assegurança</td>
-                <td>Opcions</td>
+                <th>Núm. de reserva</th>
+                <th>NIF</th>
+                <th>Codi Habitació</th>
+                <th>Data Entrada</th>
+                <th>Data Sortida</th>
+                <th>Pensió</th>
+                <th>Preu dia</th>
+                <th>Assegurança</th>
+                <th>Opcions</th>
             </tr>
         </thead>
         <tbody>

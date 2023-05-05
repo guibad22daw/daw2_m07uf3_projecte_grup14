@@ -6,19 +6,19 @@
   <table class="table mt-5 shadow-sm sm:rounded-lg" style="width: 100%; background-color:white; border-radius:20px">
     <thead>
       <tr class="table-info" style="text-align:center; font-weight: bold;">
-        <td>Codi Habitació</td>
-        <td>Capacitat</td>
-        <td>Mida</td>
-        <td>Pensió</td>
-        <td>Vistes</td>
-        <td>Llits</td>
-        <td>Nombre de llits</td>
-        <td>Terrassa</td>
-        <td>Calefacció</td>
-        <td>Aire acondicionat</td>
-        <td>Nens</td>
-        <td>Animals</td>
-        <td>Opcions</td>
+        <th>Codi Habitació</th>
+        <th>Capacitat</th>
+        <th>Mida</th>
+        <th>Pensió</th>
+        <th>Vistes</th>
+        <th>Llits</th>
+        <th>Nombre de llits</th>
+        <th>Terrassa</th>
+        <th>Calefacció</th>
+        <th>Aire acondicionat</th>
+        <th>Nens</th>
+        <th>Animals</th>
+        <th>Opcions</th>
       </tr>
     </thead>
     <tbody>

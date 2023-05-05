@@ -1776,3 +1776,8 @@ tr:not(:last-child) {
 .mostra tbody tr td:first-child {
   font-weight: 600;
 }
+
+.table thead th {
+  vertical-align: middle!important;
+  font-weight: 600;
+}

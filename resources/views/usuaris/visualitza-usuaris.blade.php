@@ -6,13 +6,13 @@
   <table class="table mt-5 shadow-sm sm:rounded-lg" style="width: 100%; background-color:white; border-radius:20px">
     <thead>
       <tr class="table-info" style="text-align:center; font-weight: bold;">
-        <td>Nom i cognoms</td>
-        <td>Email</td>
-        <td>Contrasenya</td>
-        <td>Tipus</td>
-        <td>Darrera hora de connexió</td>
-        <td>Darrera hora de desconnexió </td>
-        <td>Opcions</td>
+        <th>Nom i cognoms</th>
+        <th>Email</th>
+        <th>Contrasenya</th>
+        <th>Tipus</th>
+        <th>Darrera hora de connexió</th>
+        <th>Darrera hora de desconnexió </th>
+        <th>Opcions</th>
       </tr>
     </thead>
     <tbody>
