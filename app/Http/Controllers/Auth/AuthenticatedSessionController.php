@@ -13,7 +13,7 @@ use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 class AuthenticatedSessionController extends Controller
 {
-    public function fEnviaMail($nomTreballador, $darreraConnexio){
+    public function fEnviaMail($nomTreballador, $darreraEntrada, $darreraSortida){
         require base_path("vendor/autoload.php");
         $mail = new PHPMailer(true);
         $mail->SMTPDebug  = 0; 
@@ -24,13 +24,14 @@ class AuthenticatedSessionController extends Controller
         $mail->Username = "15587039.clot@fje.edu"; #Nom de l'usuari dins del servidor                 
         $mail->Password = getenv("MAIL_PASSWORD"); # Password de l'usuari usuari@domini.tld 
         $mail->Port = 25; # Port del servidor. Normalment 25 per connexions sense TLs/SSL
-        $mail->SetFrom("15587039.clot@fje.edu","Guillem"); # From del missatge.
-        $mail->addAddress("gbtrilux@gmail.com","Guillem"); #To del missatge
+        $mail->SetFrom(getenv("MAIL_FROM_ADDRESS"),getenv("MAIL_FROM_NAME")); # From del missatge.
+        $mail->addAddress(getenv("ADMIN_MAIL_ADDRESS"),"Guillem"); #To del missatge
         $mail->isHTML(true);
-        $mail->Subject = "Nou login - Happy Flower Family Hotel"; # Subject del misstage
-        $mail->Body = "<p>S'ha registrat un nou login.</p> <p><b>Usuari:</b> ".$nomTreballador."</p> <p><b>Hora de connexió:</b> ".$darreraConnexio."</p>";
-        $mail->Alt = "<p>El correu no s'ha enviat correctament.<p>";
-        
+        $mail->Subject = "Nou logout - Happy Flower Family Hotel"; # Subject del misstage
+        $mail->Body = "<p>S'ha registrat un nou logout.</p>
+                        <p><b>Usuari:</b> ".$nomTreballador."</p>
+                        <p><b>Hora de connexió:</b> ".$darreraEntrada."</p>
+                        <p><b>Hora de desconnexió:</b> ".$darreraSortida."</p>";        
         $mail->send();
     }
     /**
@@ -65,8 +66,6 @@ class AuthenticatedSessionController extends Controller
             return redirect()->intended(RouteServiceProvider::ADMIN_HOME);
 
         } elseif (auth()->user()->tipus == 'Treballador') {
-            $b = new AuthenticatedSessionController;
-            $b->fEnviaMail(auth()->user()->nom_complet, $user->darrera_hora_entrada);
             return redirect()->intended(RouteServiceProvider::BASIC_HOME);
         } else {
             return auth()->logout();
@@ -83,6 +82,11 @@ class AuthenticatedSessionController extends Controller
     {
         $user = auth()->user();
         $user->darrera_hora_sortida = Carbon::now()->timezone('Europe/Madrid');
+
+        if (auth()->user()->tipus == 'Treballador') {
+            $b = new AuthenticatedSessionController;
+            $b->fEnviaMail(auth()->user()->nom_complet, $user->darrera_hora_entrada, $user->darrera_hora_sortida);
+        }
 
         /** @var \App\Models\User $user **/
         $user->save();
