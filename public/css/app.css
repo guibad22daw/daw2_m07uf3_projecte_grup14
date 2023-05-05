@@ -1758,6 +1758,7 @@ thead tr th:last-child {
 
 tbody tr:last-child td:first-child {
   border-bottom: none!important;
+  border-bottom-left-radius: 20px!important;
 }
 
 .btn {
@@ -1774,4 +1775,4 @@ tr:not(:last-child) {
 
 .mostra tbody tr td:first-child {
   font-weight: 600;
-} 
+}
