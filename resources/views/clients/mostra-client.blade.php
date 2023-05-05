@@ -1,11 +1,12 @@
 @extends('disseny')
 @section('content')
-<h1>Dades del treballador</h1>
-<div class="mt-5">
-	<table class="table table-striped table-bordered table-hover">
+<h2 class="mt-5 text-center">Dades del client</h2>
+<p class="mt-3 text-center">Visualitza les dades del client</p>
+<div class="container" style="max-width: 850px;">
+	<table class="table table-striped table-bordered table-hover mt-5 shadow-sm sm:rounded-lg mostra" style="width: 100%; background-color:white; border-radius:20px; border: none">
 		<thead class="thead-dark">
-			<tr class="table-primary">
-				<th scope="col">CAMP</td>
+			<tr>
+				<th scope="col" style="width: 20%">CAMP</td>
 				<th scope="col">VALOR</td>
 			</tr>
 		</thead>
@@ -50,11 +51,12 @@
 				<td>Núm. targeta</td>
 				<td>{{$dades_client->num_targeta}}</td>
 			</tr>
-			<tr>
 		</tbody>
 	</table>
-	<div class="p-6 bg-white border-b border-gray-200">
-		<a href="{{ url('clients') }}">Torna al dashboard<a />
+	<div style="display: flex; align-items: center; justify-content: center; gap: 20px;" class="mt-5">
+		<a href="{{ url('clients/visualitza') }}" style="width: 200px; border-radius: 15px;" class="btn btn-primary btn">
+			Torna enrere
+		</a>
 	</div>
-	<div>
-		@endsection
+</div>
+@endsection

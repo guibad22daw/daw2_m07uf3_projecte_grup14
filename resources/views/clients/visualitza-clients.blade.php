@@ -6,17 +6,17 @@
   <table class="table mt-5 shadow-sm sm:rounded-lg" style="width: 100%; background-color:white; border-radius:20px">
     <thead>
       <tr class="table-info" style="text-align:center; font-weight: bold;">
-        <td>NIF</td>
-        <td>Nom i cognoms</td>
-        <td>Edat</td>
-        <td>Telefon</td>
-        <td>Adreça</td>
-        <td>Ciutat</td>
-        <td>País</td>
-        <td>Email</td>
-        <td>Tipus targeta</td>
-        <td>Núm. targeta</td>
-        <td>Opcions</td>
+        <th>NIF</th>
+        <th>Nom i cognoms</th>
+        <th>Edat</th>
+        <th>Telefon</th>
+        <th>Adreça</th>
+        <th>Ciutat</th>
+        <th>País</th>
+        <th>Email</th>
+        <th>Tipus targeta</th>
+        <th>Núm. targeta</th>
+        <th>Opcions</th>
       </tr>
     </thead>
     <tbody>

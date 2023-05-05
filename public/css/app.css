@@ -1728,26 +1728,50 @@ td {
   border-right: 1px solid #ececec!important;
 }
 
-tr td:last-child {
+tr th {
+  border: none!important;
+  border-right: 1px solid #ececec!important;
+}
+
+tr th:last-child {
   border-top-right-radius: 20px!important;
   border-right: none!important;
-  /* propiedades CSS para los td */
+}
+
+tr:last-child td:last-child {
+  border: none!important;
 }
 
 tr td:first-child {
-  border-top-left-radius: 20px!important;
   border-left: none!important;
-  /* propiedades CSS para los td */
+}
+
+thead tr th:first-child {
+  border-top-left-radius: 20px!important;
+  border-top: none!important;
+}
+
+thead tr th:last-child {
+  border-top-right-radius: 20px!important;
+  border-top: none!important;
+}
+
+tbody tr:last-child td:first-child {
+  border-bottom: none!important;
 }
 
 .btn {
   border-radius: 13px!important;
 }
 
-thead tr td {
+thead tr th {
   border-bottom: 1px solid #ececec!important;
 }
 
 tr:not(:last-child) {
-  border-bottom: 1px solid #ececec;
+  border-bottom: 1px solid #ececec!important;
 }
+
+.mostra tbody tr td:first-child {
+  font-weight: 600;
+} 
