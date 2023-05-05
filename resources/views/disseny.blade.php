@@ -13,7 +13,7 @@
 </head>
 
 <body>
-   <div class="container-fluid" style="padding: 0; background-color: #f3f4f6; height: 100%;">
+   <div class="min-h-screen bg-gray-100">
       @include('layouts.navigation')
       @yield('content')
    </div>

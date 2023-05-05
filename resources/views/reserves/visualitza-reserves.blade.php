@@ -44,7 +44,7 @@
         </tbody>
     </table>
     <div style="display: flex; align-items: center; justify-content: center; gap: 20px;" class="mt-5">
-        <a href="{{ url('habitacions') }}" style="width: 200px; border-radius: 15px;" class="btn btn-primary btn">
+        <a href="{{ url('reserves') }}" style="width: 200px; border-radius: 15px;" class="btn btn-primary btn">
             Torna al dashboard
         </a>
     </div>
