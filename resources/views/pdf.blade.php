@@ -48,7 +48,7 @@
         </thead>
         <tbody>
             @php
-            $atributs = $dades_user->getAttributes();
+            $atributs = $dades->getAttributes();
             @endphp
             @foreach($atributs as $camp => $valor)
                 @if ($camp != 'remember_token' && $camp != 'created_at' && $camp != 'updated_at') {
@@ -60,10 +60,6 @@
             @endforeach
         </tbody>
     </table>
-
-    <div class="footer">
-        Página {PAGE_NUM} de {PAGE_COUNT}
-    </div>
 </body>
 
 </html>

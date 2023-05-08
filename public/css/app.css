@@ -1757,6 +1757,10 @@ thead tr th:last-child {
   border-top: none !important;
 }
 
+tbody tr:last-child {
+  border-bottom-left-radius: 20px!important;
+}
+
 tbody tr:last-child td:first-child {
   border-bottom: none !important;
   border-bottom-left-radius: 20px !important;

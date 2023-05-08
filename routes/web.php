@@ -57,7 +57,10 @@ Route::group(['middleware' => 'auth'], function () {
 
 Route::middleware(['auth', 'gerent'])->group(function () {
     // Rutes per la gestió d'usuaris
-    Route::get('/pdf/{id}', 'ControladorPDF@generarPDF')->name('pdf');
+    Route::get('/pdfUsuaris/{id}', 'ControladorPDF@generarPDFUsuaris')->name('pdfUsuaris');
+    Route::get('/pdfReserves/{rid}', 'ControladorPDF@generarPDFReserves')->name('pdfReserves');
+    Route::get('/pdfHabitacions/{codiHab}', 'ControladorPDF@generarPDFHabitacions')->name('pdfHabitacions');
+    Route::get('/pdfClients/{dni}', 'ControladorPDF@generarPDFClients')->name('pdfClients');
     Route::get('/usuaris/visualitza', 'ControladorUser@visualitza')->name('user.visualitza');
     Route::patch('/usuaris/update/{id}', 'ControladorUser@update')->name('user.update');
     Route::resource('/usuaris', 'ControladorUser');
