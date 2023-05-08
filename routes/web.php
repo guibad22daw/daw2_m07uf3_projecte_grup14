@@ -57,6 +57,7 @@ Route::group(['middleware' => 'auth'], function () {
 
 Route::middleware(['auth', 'gerent'])->group(function () {
     // Rutes per la gestió d'usuaris
+    Route::get('/pdf/{id}', 'ControladorPDF@generarPDF')->name('pdf');
     Route::get('/usuaris/visualitza', 'ControladorUser@visualitza')->name('user.visualitza');
     Route::patch('/usuaris/update/{id}', 'ControladorUser@update')->name('user.update');
     Route::resource('/usuaris', 'ControladorUser');
