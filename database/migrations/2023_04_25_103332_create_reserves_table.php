@@ -23,7 +23,7 @@ class CreateReservesTable extends Migration
             $table->date('data_sortida');
             $table->enum('pensio', ['Només allotjament', 'Allotjament i esmorzar inclòs', 'Mitja pensió', 'Pensió completa']);
             $table->integer('preu_dia');
-            $table->enum('asseguranca', ['Franquícia fins 500 euros', 'Franquícia fins a 1000 euros', 'Sense franquícia']);
+            $table->enum('asseguranca', ['Franquícia fins 500 euros', 'Franquícia fins 1000 euros', 'Sense franquícia']);
             $table->timestamps();
         });
     }

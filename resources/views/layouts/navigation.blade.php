@@ -15,17 +15,17 @@
                     <x-nav-link :href="route('dashboard')" :active="url()->current() === route('dashboard')">
                         {{ __('Dashboard') }}
                     </x-nav-link>
-                    <x-nav-link :href="url('habitacions')" :active="url()->current() === url('habitacions')">
+                    <x-nav-link :href="url('habitacions')" :active="Str::contains(url()->current(), 'habitacions')">
                         {{ __('Habitacions') }}
                     </x-nav-link>
-                    <x-nav-link :href="url('clients')" :active="url()->current() === url('clients')">
+                    <x-nav-link :href="url('clients')" :active="Str::contains(url()->current(), 'clients')">
                         {{ __('Clients') }}
                     </x-nav-link>
-                    <x-nav-link :href="url('reserves')" :active="url()->current() === url('reserves')">
+                    <x-nav-link :href="url('reserves')" :active="Str::contains(url()->current(), 'reserves')">
                         {{ __('Reserves') }}
                     </x-nav-link>
                     @if(Auth::check() && Auth::user()->tipus === 'Gerent')
-                    <x-nav-link :href="url('usuaris')" :active="url()->current() === url('usuaris')">
+                    <x-nav-link :href="url('usuaris')" :active="Str::contains(url()->current(), 'usuaris')">
                         {{ __('Usuaris') }}
                     </x-nav-link>
                     @endif
