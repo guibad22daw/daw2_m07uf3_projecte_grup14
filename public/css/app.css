@@ -1757,8 +1757,8 @@ thead tr th:last-child {
   border-top: none !important;
 }
 
-tbody tr:last-child {
-  border-bottom-left-radius: 20px!important;
+tbody tr:last-child, tbody tr:last-child td:last-child{
+  border-bottom-right-radius: 20px!important;
 }
 
 tbody tr:last-child td:first-child {
