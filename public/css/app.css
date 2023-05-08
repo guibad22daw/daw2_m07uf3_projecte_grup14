@@ -1085,7 +1085,7 @@ select {
 }
 
 .border-indigo-400 {
-  --tw-border-opacity: 1!important;
+  --tw-border-opacity: 1 !important;
   border-color: rgb(129 140 248 / var(--tw-border-opacity));
 }
 
@@ -1721,57 +1721,57 @@ select {
 
 td {
   vertical-align: middle !important;
-  border-top: none!important;
+  border-top: none !important;
 }
 
 .table td {
   border-top: none;
-  border-right: 1px solid #ececec!important;
+  border-right: 1px solid #ececec !important;
 }
 
 tr th {
-  border: none!important;
-  border-right: 1px solid #ececec!important;
+  border: none !important;
+  border-right: 1px solid #ececec !important;
 }
 
 tr th:last-child {
-  border-top-right-radius: 20px!important;
-  border-right: none!important;
+  border-top-right-radius: 20px !important;
+  border-right: none !important;
 }
 
 tr:last-child td:last-child {
-  border: none!important;
+  border: none !important;
 }
 
 tr td:first-child {
-  border-left: none!important;
+  border-left: none !important;
 }
 
 thead tr th:first-child {
-  border-top-left-radius: 20px!important;
-  border-top: none!important;
+  border-top-left-radius: 20px !important;
+  border-top: none !important;
 }
 
 thead tr th:last-child {
-  border-top-right-radius: 20px!important;
-  border-top: none!important;
+  border-top-right-radius: 20px !important;
+  border-top: none !important;
 }
 
 tbody tr:last-child td:first-child {
-  border-bottom: none!important;
-  border-bottom-left-radius: 20px!important;
+  border-bottom: none !important;
+  border-bottom-left-radius: 20px !important;
 }
 
 .btn {
-  border-radius: 13px!important;
+  border-radius: 13px !important;
 }
 
 thead tr th {
-  border-bottom: 1px solid #ececec!important;
+  border-bottom: 1px solid #ececec !important;
 }
 
 tr:not(:last-child) {
-  border-bottom: 1px solid #ececec!important;
+  border-bottom: 1px solid #ececec !important;
 }
 
 .mostra tbody tr td:first-child {
@@ -1779,13 +1779,33 @@ tr:not(:last-child) {
 }
 
 .table thead th {
-  vertical-align: middle!important;
+  vertical-align: middle !important;
   font-weight: 600;
 }
 
 .navLinks a {
-  font-family: 'Nunito'!important;
-  font-weight: 600!important;
-  outline: none!important;
-  text-decoration: none!important;
+  font-family: 'Nunito' !important;
+  font-weight: 600 !important;
+  outline: none !important;
+  text-decoration: none !important;
+}
+
+.botons-mostra {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+.botons-mostra a {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.botons-mostra a:first-child {
+  height: 50px;
 }
