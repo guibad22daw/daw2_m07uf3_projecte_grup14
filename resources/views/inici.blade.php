@@ -93,7 +93,7 @@
             <h4> Aplicació de gestió d'habitacions, clients, reserves i usuaris.</h4>
             @if (Route::has('login'))
                 @auth
-                <a href="{{ url('/dashboard') }}" class="btn mt-3">Dashbaord</a>
+                <a href="{{ url('/dashboard') }}" class="btn mt-3">Dashboard</a>
                 @else
                 <a href="{{ url('/login') }}" class="btn mt-3">Inicia sessió</a>
                 @endauth
