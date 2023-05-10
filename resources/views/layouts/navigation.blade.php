@@ -12,7 +12,7 @@
 
                 <!-- Navigation Links -->
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex navLinks">
-                    <x-nav-link :href="route('dashboard')" :active="url()->current() === route('dashboard')">
+                    <x-nav-link :href="route('dashboard')" :active="Str::contains(url()->current(), 'dashboard')">
                         {{ __('Dashboard') }}
                     </x-nav-link>
                     <x-nav-link :href="url('habitacions')" :active="Str::contains(url()->current(), 'habitacions')">
