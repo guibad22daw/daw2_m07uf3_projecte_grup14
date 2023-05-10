@@ -18,7 +18,8 @@
 				@csrf
 				<div class="form-group">
 					<label for="nif">NIF</label>
-					<input type="text" class="form-control" name="dni" />
+					<input type="text" class="form-control" name="dni" pattern="[0-9]{8}[A-Z]{1}"/>
+					<small>Exemple: 12345678X</small>
 				</div>
 				<div class="form-group">
 					<label for="nom_complet">Nom i cognoms</label>
@@ -26,11 +27,11 @@
 				</div>
 				<div class="form-group">
 					<label for="edat">Edat</label>
-					<input type="number" class="form-control" name="edat" />
+					<input type="number" class="form-control" name="edat" min="0"/>
 				</div>
 				<div class="form-group">
 					<label for="telefon">Telefon</label>
-					<input type="number" class="form-control" name="telefon" />
+					<input type="number" class="form-control" name="telefon" min="0"/>
 				</div>
 				<div class="form-group">
 					<label for="adreca">Adreça</label>
@@ -46,7 +47,7 @@
 				</div>
 				<div class="form-group">
 					<label for="email">Email</label>
-					<input type="text" class="form-control" name="email" />
+					<input type="email" class="form-control" name="email" />
 				</div>
 				<div class="row form-group">
 					<div class="col-3 ">
@@ -58,7 +59,7 @@
 					</div>
 					<div class="col">
 						<label for="num_targeta">Núm. targeta</label>
-						<input type="number" class="form-control" name="num_targeta" />
+						<input type="number" class="form-control" name="num_targeta" min="0"/>
 					</div>
 				</div>
 				<br />
