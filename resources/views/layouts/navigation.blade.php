@@ -74,23 +74,25 @@
     </div>
 
     <!-- Responsive Navigation Menu -->
-    <div :class="{'block': open, 'hidden': ! open}" class="hidden sm:hidden">
+    <div :class="{'block': open, 'hidden': ! open}" class="hidden sm:hidden navLinks">
         <div class="pt-2 pb-3 space-y-1">
-            <x-responsive-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
+            <x-responsive-nav-link :href="route('dashboard')" :active="Str::contains(url()->current(), 'dashboard')">
                 {{ __('Dashboard') }}
             </x-responsive-nav-link>
-            <x-responsive-nav-link :href="url('habitacions')" :active="request()->routeIs('habitacions')">
+            <x-responsive-nav-link :href="url('habitacions')" :active="Str::contains(url()->current(), 'habitacions')">
                 {{ __('Habitacions') }}
             </x-responsive-nav-link>
-            <x-responsive-nav-link :href="url('clients')" :active="request()->routeIs('clients')">
+            <x-responsive-nav-link :href="url('clients')" :active="Str::contains(url()->current(), 'clients')">
                 {{ __('Clients') }}
             </x-responsive-nav-link>
-            <x-responsive-nav-link :href="url('reserves')" :active="request()->routeIs('reserves')">
+            <x-responsive-nav-link :href="url('reserves')" :active="Str::contains(url()->current(), 'reserves')">
                 {{ __('Reserves') }}
             </x-responsive-nav-link>
-            <x-responsive-nav-link :href="url('usuaris')" :active="request()->routeIs('usuaris')">
+            @if(Auth::check() && Auth::user()->tipus === 'Gerent')
+            <x-responsive-nav-link :href="url('usuaris')" :active="Str::contains(url()->current(), 'usuaris')">
                 {{ __('Usuaris') }}
             </x-responsive-nav-link>
+            @endif
         </div>
 
         <!-- Responsive Settings Options -->

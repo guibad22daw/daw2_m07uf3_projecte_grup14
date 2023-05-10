@@ -1794,6 +1794,10 @@ tr:not(:last-child) {
   text-decoration: none !important;
 }
 
+.navLinks a:hover {
+  color: black!important;
+}
+
 .botons-mostra {
   display: flex;
   flex-direction: column;
@@ -1812,4 +1816,10 @@ tr:not(:last-child) {
 
 .botons-mostra a:first-child {
   height: 50px;
+}
+
+.usuariDropdown a {
+  outline: none !important;
+  text-decoration: none !important;
+  color: black!important;
 }
