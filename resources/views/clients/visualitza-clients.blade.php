@@ -2,7 +2,7 @@
 @section('content')
 <h2 class="mt-5 text-center">Llista de clients</h2>
 <p class="mt-3 text-center">Visualitza les dades de tots els clients</p>
-<div class="container" style="max-width: 1500px;">
+<div class="container" style="max-width: 1600px;">
   <table class="table mt-5 shadow-sm sm:rounded-lg" style="width: 100%; background-color:white; border-radius:20px">
     <thead>
       <tr class="table-info" style="text-align:center; font-weight: bold;">
@@ -26,7 +26,7 @@
         <td>{{$client->nom_complet}}</td>
         <td>{{$client->edat}}</td>
         <td>{{$client->telefon}}</td>
-        <td>{{$client->adreca}}</td>
+        <td style="max-width: 180px;">{{$client->adreca}}</td>
         <td>{{$client->ciutat}}</td>
         <td>{{$client->pais}}</td>
         <td>{{$client->email}}</td>

@@ -2,7 +2,7 @@
 @section('content')
 <h2 class="mt-5 text-center">Llista d'habitacions</h2>
 <p class="mt-3 text-center">Visualitza les dades de totes les habitacions</p>
-<div class="container" style="max-width: 1550px;">
+<div class="container" style="max-width: 1600px;">
   <table class="table mt-5 shadow-sm sm:rounded-lg" style="width: 100%; background-color:white; border-radius:20px">
     <thead>
       <tr class="table-info" style="text-align:center; font-weight: bold;">
@@ -27,7 +27,7 @@
         <td>{{$habitacio->codiHab}}</td>
         <td>{{$habitacio->capacitat}}</td>
         <td>{{$habitacio->mida}}</td>
-        <td>{{$habitacio->pensio}}</td>
+        <td style="max-width: 180px;">{{$habitacio->pensio}}</td>
         <td>{{$habitacio->vistes}}</td>
         <td>{{$habitacio->llits}}</td>
         <td>{{$habitacio->n_llits}}</td>

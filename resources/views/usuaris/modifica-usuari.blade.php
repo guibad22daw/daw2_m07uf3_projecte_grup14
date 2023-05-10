@@ -27,7 +27,7 @@
                 </div>
                 <div class="form-group">
                     <label for="password">Contrasenya</label>
-                    <input type="password" class="form-control" name="password" value="{{ $dades_user->password }}" />
+                    <input type="password" class="form-control" name="password" value="{{ $dades_user->password }}" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*_=+-]).{8,12}$" title="La contrasenya ha de tenir un mínim de 8 caràcters, 1 majúscula, 1 minúscula, 1 número i 1 símbol."/>
                 </div>
                 <div class="form-group">
                     <label for="tipus">Tipus</label>

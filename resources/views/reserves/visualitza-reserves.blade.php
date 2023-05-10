@@ -2,7 +2,7 @@
 @section('content')
 <h2 class="mt-5 text-center">Llista de reserves</h2>
 <p class="mt-3 text-center">Visualitza les dades de totes les reserves</p>
-<div class="container" style="max-width: 1400px;">
+<div class="container" style="max-width: 1500px;">
     <table class="table mt-5 shadow-sm sm:rounded-lg" style="width: 100%; background-color:white; border-radius:20px">
         <thead>
             <tr style="text-align:center; background-color: #bee5eb ;font-weight: bold; border-radius: 20px">
