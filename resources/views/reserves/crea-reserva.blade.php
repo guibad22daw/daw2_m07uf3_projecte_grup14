@@ -19,11 +19,13 @@
                 <!-- https://laravel.com/docs/10.x/csrf -->
                 <div class="form-group">
                     <label for="dni">NIF</label>
-                    <input type="text" class="form-control" name="dni" />
+                    <input type="text" class="form-control" name="dni" pattern="[0-9]{8}[A-Z]{1}"/>
+                    <small>Exemple: 12345678X</small>
                 </div>
                 <div class="form-group">
                     <label for="codiHab">Codi d'habitació</label>
-                    <input type="text" class="form-control" name="codiHab" />
+                    <input type="text" class="form-control" name="codiHab" pattern="[A-Z]{3}[0-9]{4}" oninput="this.value = this.value.toUpperCase()" required />
+                    <small>Exemple: ABC1234</small>
                 </div>
                 <div class="row form-group">
                     <div class="col">
@@ -46,7 +48,7 @@
                 </div>
                 <div class="form-group">
                     <label for="preu_dia">Preu dia</label>
-                    <input type="number" class="form-control" name="preu_dia" />
+                    <input type="number" class="form-control" name="preu_dia" min="0"/>
                 </div>
                 <div class="form-group mb-4">
                     <label for="asseguranca">Assegurança</label>

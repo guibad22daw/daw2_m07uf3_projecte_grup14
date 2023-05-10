@@ -1,6 +1,6 @@
 @extends('disseny')
 @section('content')
-<h2 class="mt-5 text-center">Modifica les dades del client</h2>
+<h2 class="mt-5 text-center">Modifica les dades de la reserva</h2>
 <p class="mt-3 text-center">Realitza modificacions als camps que es desitgin</p>
 <div class="container" style="max-width: 700px;">
 	<div class="card mt-5 shadow-sm sm:rounded-lg" style="border-radius: 20px">
@@ -46,7 +46,7 @@
 				</div>
 				<div class="form-group">
 					<label for="preu_dia">Preu dia</label>
-					<input type="text" class="form-control" name="preu_dia" value="{{ $dades_reserva->preu_dia }}" />
+					<input type="number" class="form-control" name="preu_dia" value="{{ $dades_reserva->preu_dia }}" min="0"/>
 				</div>
 				<div class="form-group mb-4">
 					<label for="asseguranca">Assegurança</label>
