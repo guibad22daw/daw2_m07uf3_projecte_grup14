@@ -3,7 +3,9 @@
 <head>
     <title>PDF generat amb Dompdf</title>
     <style>
-        /* Estilos para el contenido del PDF */
+        * {
+            font-family: Arial, Helvetica, sans-serif;
+        }
         table {
             border-collapse: collapse;
             width: 100%;
@@ -36,12 +38,12 @@
 
 <body>
     <div class="header">
-        <h1>PDF</h1>
+        <h1>Dades</h1>
     </div>
     
     <table class="table table-strip">
         <thead>
-            <tr>
+            <tr style="background-color: black; color: white;">
                 <th>CAMP</th>
                 <th>VALOR</th>
             </tr>
@@ -53,7 +55,7 @@
             @foreach($atributs as $camp => $valor)
                 @if ($camp != 'remember_token' && $camp != 'created_at' && $camp != 'updated_at') {
                     <tr>
-                        <td>{{ $camp }}</td>
+                        <td><b>{{ $camp }}</b></td>
                         <td>{{ $valor }}</td>
                     </tr>
                 @endif

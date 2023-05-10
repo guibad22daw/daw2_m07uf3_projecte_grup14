@@ -2,7 +2,7 @@
 @section('content')
 <h2 class="mt-5 text-center">Llista d'usuaris</h2>
 <p class="mt-3 text-center">Visualitza les dades de tots els usuaris</p>
-<div class="container" style="max-width: 1500px;">
+<div class="container" style="max-width: 1450px;">
   <table class="table mt-5 shadow-sm sm:rounded-lg" style="width: 100%; background-color:white; border-radius:20px">
     <thead>
       <tr class="table-info" style="text-align:center; font-weight: bold;">
