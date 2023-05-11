@@ -21,11 +21,11 @@ class AuthenticatedSessionController extends Controller
         $mail->Host = "smtp.gmail.com"; #Adreça del servidor SMTP                          
         $mail->Mailer = "smtp";
         $mail->SMTPAuth = true;
-        $mail->Username = "15587039.clot@fje.edu"; #Nom de l'usuari dins del servidor                 
+        $mail->Username = getenv("MAIL_FROM_ADDRESS"); #Nom de l'usuari dins del servidor                 
         $mail->Password = getenv("MAIL_PASSWORD"); # Password de l'usuari usuari@domini.tld 
         $mail->Port = 25; # Port del servidor. Normalment 25 per connexions sense TLs/SSL
         $mail->SetFrom(getenv("MAIL_FROM_ADDRESS"),getenv("MAIL_FROM_NAME")); # From del missatge.
-        $mail->addAddress(getenv("ADMIN_MAIL_ADDRESS"),"Guillem"); #To del missatge
+        $mail->addAddress(getenv("ADMIN_MAIL_ADDRESS"),"Admin"); #To del missatge
         $mail->isHTML(true);
         $mail->Subject = "Nou logout - Happy Flower Family Hotel"; # Subject del misstage
         $mail->Body = "<p>S'ha registrat un nou logout.</p>
