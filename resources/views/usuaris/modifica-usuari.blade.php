@@ -27,11 +27,14 @@
                 </div>
                 <div class="form-group">
                     <label for="password">Contrasenya</label>
-                    <input type="password" class="form-control" name="password" value="{{ $dades_user->password }}" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*_=+-]).{8,12}$" title="La contrasenya ha de tenir un mínim de 8 caràcters, 1 majúscula, 1 minúscula, 1 número i 1 símbol."/>
+                    <input type="password" class="form-control" name="password" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*_=+-]).{8,99}$" title="La contrasenya ha de tenir un mínim de 8 caràcters, 1 majúscula, 1 minúscula, 1 número i 1 símbol."/>
                 </div>
                 <div class="form-group">
                     <label for="tipus">Tipus</label>
-                    <input type="text" class="form-control" name="tipus" value="{{ $dades_user->tipus }}" />
+                    <select name="tipus" class="form-control">
+						<option value="Gerent" {{ $dades_user->asseguranca == "Gerent" ? 'selected' : ''}}>Gerent</option>
+						<option value="Treballador" {{ $dades_user->asseguranca == "Treballador" ? 'selected' : ''}}>Treballador</option>
+					</select>
                 </div>
                 <button type="submit" class="btn btn-block btn-primary">Envia</button>
             </form>
