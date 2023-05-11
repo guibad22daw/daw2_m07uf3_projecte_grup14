@@ -24,8 +24,8 @@
                 </div>
                 <div class="form-group">
                     <label for="codiHab">Codi d'habitació</label>
-                    <input type="text" class="form-control" name="codiHab" pattern="[A-Z]{3}[0-9]{4}" oninput="this.value = this.value.toUpperCase()" required />
-                    <small>Exemple: ABC1234</small>
+                    <input type="text" class="form-control" name="codiHab" pattern="[0-9]{4}[A-Z]{3}" oninput="this.value = this.value.toUpperCase()" required />
+                    <small>Exemple: 1234ABC</small>
                 </div>
                 <div class="row form-group">
                     <div class="col">
