@@ -19,8 +19,8 @@
                 <!-- https://laravel.com/docs/10.x/csrf -->
                 <div class="form-group">
                     <label for="codiHab">Codi d'habitació</label>
-                    <input type="text" class="form-control" name="codiHab" pattern="[A-Z]{3}[0-9]{4}" oninput="this.value = this.value.toUpperCase()" required />
-                    <small>El codi d'habitació ha de tenir 3 lletres i 4 xifres. Exemple: ABC1234</small>
+                    <input type="text" class="form-control" name="codiHab" pattern="[0-9]{4}[A-Z]{3}" oninput="this.value = this.value.toUpperCase()" required />
+                    <small>El codi d'habitació ha de tenir 3 lletres i 4 xifres. Exemple: 1234ABC</small>
                 </div>
                 <div class="row form-group">
                     <div class="col">

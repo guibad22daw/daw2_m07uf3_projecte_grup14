@@ -41,11 +41,11 @@
 				</div>
 				<div class="form-group">
 					<label for="ciutat">Ciutat</label>
-					<input type="text" class="form-control" name="ciutat" pattern="[0-9]{8}[A-Z]{1}" />
+					<input type="text" class="form-control" name="ciutat" />
 				</div>
 				<div class="form-group">
 					<label for="pais">País</label>
-					<input type="text" class="form-control" name="pais" pattern="[0-9]{8}[A-Z]{1}" />
+					<input type="text" class="form-control" name="pais" />
 				</div>
 				<div class="form-group">
 					<label for="email">Email</label>

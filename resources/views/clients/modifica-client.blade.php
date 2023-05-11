@@ -42,11 +42,11 @@
 				</div>
 				<div class="form-group">
 					<label for="ciutat">Ciutat</label>
-					<input type="text" class="form-control" name="ciutat" value="{{ $dades_client->ciutat }}" pattern="[0-9]{8}[A-Z]{1}"/>
+					<input type="text" class="form-control" name="ciutat" value="{{ $dades_client->ciutat }}"/>
 				</div>
 				<div class="form-group">
 					<label for="pais">País</label>
-					<input type="text" class="form-control" name="pais" value="{{ $dades_client->pais }}" pattern="[0-9]{8}[A-Z]{1}"/>
+					<input type="text" class="form-control" name="pais" value="{{ $dades_client->pais }}" />
 				</div>
 				<div class="form-group">
 					<label for="email">Email</label>
