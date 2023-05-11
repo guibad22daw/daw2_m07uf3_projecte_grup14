@@ -19,20 +19,22 @@
 				@method('PUT')
 				<div class="form-group">
 					<label for="nif">NIF</label>
-					<input type="text" class="form-control" name="dni" value="{{ $dades_client->dni }}" pattern="[0-9]{8}[A-Z]{1}"/>
+					<input type="text" class="form-control" name="dni" value="{{ $dades_client->dni }}" pattern="[0-9]{8}[A-Z]{1}" oninput="this.value = this.value.toUpperCase()"/>
 					<small>Exemple: 12345678X</small>
 				</div>
 				<div class="form-group">
 					<label for="nom_complet">Nom i cognoms</label>
-					<input type="text" class="form-control" name="nom_complet" value="{{ $dades_client->nom_complet }}" />
+					<input type="text" class="form-control" name="nom_complet" value="{{ $dades_client->nom_complet }}" pattern="[A-Za-zÀ-ÿ ]+"/>
+					<small>No pot contenir números ni caràcters especials.</small>
 				</div>
 				<div class="form-group">
 					<label for="edat">Edat</label>
 					<input type="number" class="form-control" name="edat" value="{{ $dades_client->edat }}" min="0"/>
 				</div>
 				<div class="form-group">
-					<label for="telefon">Telefon</label>
-					<input type="number" class="form-control" name="telefon" value="{{ $dades_client->telefon }}" min="0"/>
+					<label for="telefon">Telèfon</label>
+					<input type="number" class="form-control" name="telefon" value="{{ $dades_client->telefon }}" minlength="6" pattern="[0-9]{6,}"/>
+					<small>Introdueixi un número de telèfon vàlid de 6 dígits</small>
 				</div>
 				<div class="form-group">
 					<label for="adreca">Adreça</label>
@@ -40,11 +42,11 @@
 				</div>
 				<div class="form-group">
 					<label for="ciutat">Ciutat</label>
-					<input type="text" class="form-control" name="ciutat" value="{{ $dades_client->ciutat }}" />
+					<input type="text" class="form-control" name="ciutat" value="{{ $dades_client->ciutat }}" pattern="[0-9]{8}[A-Z]{1}"/>
 				</div>
 				<div class="form-group">
 					<label for="pais">País</label>
-					<input type="text" class="form-control" name="pais" value="{{ $dades_client->pais }}" />
+					<input type="text" class="form-control" name="pais" value="{{ $dades_client->pais }}" pattern="[0-9]{8}[A-Z]{1}"/>
 				</div>
 				<div class="form-group">
 					<label for="email">Email</label>
