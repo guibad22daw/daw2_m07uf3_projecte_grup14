@@ -110,7 +110,7 @@ class ControladorUser extends Controller
         $user->nom_complet = $noves_dades_usuari['nom_complet'];
         $user->email = $noves_dades_usuari['email'];
         $user->tipus = $noves_dades_usuari['tipus'];
-        if (isset($noves_dades_usuari['password'])) {
+        if (isset($noves_dades_usuari['password']) && $noves_dades_usuari['password'] != $user->password) {
             $user->password = Hash::make($noves_dades_usuari['password']);
         }
         $user->save(); 
