@@ -42,7 +42,7 @@ class ControladorClient extends Controller
     public function store(Request $request)
     {
         $nouClient = $request->validate([
-            'dni' => 'required',
+            'dni' => 'required|unique:clients',
             'nom_complet' => 'required',
             'edat' => 'required',
             'telefon' => 'required',

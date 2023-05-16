@@ -45,7 +45,7 @@ class ControladorUser extends Controller
     {
         $noves_dades_usuari = $request->validate([
             'nom_complet' => 'required',
-            'email' => 'required',
+            'email' => 'required|unique:users',
             'password' => 'required',
             'tipus' => 'required',
             'darrera_hora_entrada' => 'nullable',

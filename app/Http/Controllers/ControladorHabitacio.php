@@ -42,7 +42,7 @@ class ControladorHabitacio extends Controller
     public function store(Request $request)
     {
         $novaHabitacio = $request->validate([
-            'codiHab' => 'required',
+            'codiHab' => 'required|unique:habitacions',
             'capacitat' => 'required',
             'mida' => 'required',
             'pensio' => 'required',
