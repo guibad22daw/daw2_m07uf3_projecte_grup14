@@ -34,12 +34,12 @@
 					<div class="col">
 						<label for="cognoms">Capacitat</label>
 						<select name="capacitat" class="form-control">
-							<option value="1" {{ $dades_habitacio->mida == "1" ? 'selected' : ''}}>1</option>
-							<option value="2" {{ $dades_habitacio->mida == "2" ? 'selected' : ''}}>2</option>
-							<option value="3" {{ $dades_habitacio->mida == "3" ? 'selected' : ''}}>3</option>
-							<option value="4" {{ $dades_habitacio->mida == "4" ? 'selected' : ''}}>4</option>
-							<option value="5" {{ $dades_habitacio->mida == "5" ? 'selected' : ''}}>5</option>
-							<option value="6" {{ $dades_habitacio->mida == "6" ? 'selected' : ''}}>6</option>
+							<option value="1" {{ $dades_habitacio->capacitat == "1" ? 'selected' : ''}}>1</option>
+							<option value="2" {{ $dades_habitacio->capacitat == "2" ? 'selected' : ''}}>2</option>
+							<option value="3" {{ $dades_habitacio->capacitat == "3" ? 'selected' : ''}}>3</option>
+							<option value="4" {{ $dades_habitacio->capacitat == "4" ? 'selected' : ''}}>4</option>
+							<option value="5" {{ $dades_habitacio->capacitat == "5" ? 'selected' : ''}}>5</option>
+							<option value="6" {{ $dades_habitacio->capacitat == "6" ? 'selected' : ''}}>6</option>
 						</select>
 					</div>
 				</div>

@@ -32,8 +32,8 @@
                 <div class="form-group">
                     <label for="tipus">Tipus</label>
                     <select name="tipus" class="form-control">
-						<option value="Gerent" {{ $dades_user->asseguranca == "Gerent" ? 'selected' : ''}}>Gerent</option>
-						<option value="Treballador" {{ $dades_user->asseguranca == "Treballador" ? 'selected' : ''}}>Treballador</option>
+						<option value="Gerent" {{ $dades_user->tipus == "Gerent" ? 'selected' : ''}}>Gerent</option>
+						<option value="Treballador" {{ $dades_user->tipus == "Treballador" ? 'selected' : ''}}>Treballador</option>
 					</select>
                 </div>
                 <button type="submit" class="btn btn-block btn-primary">Envia</button>

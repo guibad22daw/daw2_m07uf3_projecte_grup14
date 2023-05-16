@@ -17,7 +17,7 @@
 			<form method="POST" action="/clients">
 				@csrf
 				<div class="form-group">
-					<label for="nif">NIF</label>
+					<label for="dni">NIF</label>
 					<input type="text" class="form-control" name="dni" pattern="[0-9]{8}[A-Z]{1}" oninput="this.value = this.value.toUpperCase()" />
 					<small>Exemple: 12345678X</small>
 				</div>
@@ -32,8 +32,8 @@
 				</div>
 				<div class="form-group">
 					<label for="telefon">Telèfon</label>
-					<input type="text" class="form-control" name="telefon" minlength="6" pattern="[0-9]{6,}" required />
-					<small>Introdueixi un número de telèfon vàlid de 6 dígits</small>
+					<input type="text" class="form-control" name="telefon" minlength="9" required />
+					<small>Introdueixi un número de telèfon vàlid de 9 dígits</small>
 				</div>
 				<div class="form-group">
 					<label for="adreca">Adreça</label>
