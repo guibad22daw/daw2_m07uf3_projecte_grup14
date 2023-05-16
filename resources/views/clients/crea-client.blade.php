@@ -14,7 +14,7 @@
 				</ul>
 			</div>
 			@endif
-			<form method="post" action="/clients">
+			<form method="POST" action="/clients">
 				@csrf
 				<div class="form-group">
 					<label for="nif">NIF</label>

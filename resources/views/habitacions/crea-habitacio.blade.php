@@ -14,7 +14,7 @@
                 </ul>
             </div>
             @endif
-            <form method="post" action="/habitacions">
+            <form method="POST" action="/habitacions">
                 @csrf
                 <!-- https://laravel.com/docs/10.x/csrf -->
                 <div class="form-group">
@@ -69,7 +69,7 @@
                 </div>
                 <div class="form-group">
                     <label for="n_llits">Nombre de llits</label>
-                    <input type="number" class="form-control" name="n_llits" min="0" />
+                    <input type="number" class="form-control" name="n_llits" min="1" />
                 </div>
                 <div class="form-group">
                     <label for="terrassa">Terrassa</label>

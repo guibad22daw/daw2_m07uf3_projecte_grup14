@@ -69,7 +69,7 @@
 				</div>
 				<div class="form-group">
 					<label for="n_llits">Nombre de llits</label>
-					<input type="number" class="form-control" name="n_llits" value="{{ $dades_habitacio->n_llits }}" min="0"/>
+					<input type="number" class="form-control" name="n_llits" value="{{ $dades_habitacio->n_llits }}" min="1"/>
 				</div>
 				<div class="form-group">
 					<label for="terrassa">Terrassa</label>

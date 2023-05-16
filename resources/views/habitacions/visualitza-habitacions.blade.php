@@ -12,10 +12,10 @@
         <th>Pensió</th>
         <th>Vistes</th>
         <th>Llits</th>
-        <th>Nombre de llits</th>
+        <th style="width: 100px;">Nombre de llits</th>
         <th>Terrassa</th>
         <th>Calefacció</th>
-        <th>Aire acondicionat</th>
+        <th style="width: 50px;">Aire acondicionat</th>
         <th>Nens</th>
         <th>Animals</th>
         <th>Opcions</th>

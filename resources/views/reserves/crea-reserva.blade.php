@@ -14,7 +14,7 @@
                 </ul>
             </div>
             @endif
-            <form method="post" action="/reserves">
+            <form method="POST" action="/reserves">
                 @csrf
                 <!-- https://laravel.com/docs/10.x/csrf -->
                 <div class="form-group">

@@ -14,7 +14,7 @@
                 </ul>
             </div>
             @endif
-            <form method="post" action="/usuaris">
+            <form method="POST" action="/usuaris">
                 @csrf
                 <div class="form-group">
                     <label for="nom_complet">Nom i cognoms</label>
