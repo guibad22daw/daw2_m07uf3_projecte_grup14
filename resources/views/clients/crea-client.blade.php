@@ -23,7 +23,7 @@
 				</div>
 				<div class="form-group">
 					<label for="nom_complet">Nom i cognoms</label>
-					<input type="text" class="form-control" name="nom_complet" pattern="[A-Za-zÀ-ÿ ]+" required />
+					<input type="text" class="form-control" name="nom_complet" pattern="[A-Za-zÀ-ÿ ]+"/>
 					<small>No pot contenir números ni caràcters especials.</small>
 				</div>
 				<div class="form-group">
@@ -32,8 +32,7 @@
 				</div>
 				<div class="form-group">
 					<label for="telefon">Telèfon</label>
-					<input type="text" class="form-control" name="telefon" minlength="9" required />
-					<small>Introdueixi un número de telèfon vàlid de 9 dígits</small>
+					<input type="text" class="form-control" name="telefon" pattern="[0-9]{9}" title="Introdueix un número de 9 xifres."/>
 				</div>
 				<div class="form-group">
 					<label for="adreca">Adreça</label>

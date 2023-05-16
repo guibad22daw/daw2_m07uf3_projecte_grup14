@@ -33,8 +33,7 @@
 				</div>
 				<div class="form-group">
 					<label for="telefon">Telèfon</label>
-					<input type="text" class="form-control" name="telefon" value="{{ $dades_client->telefon }}" minlength="9"/>
-					<small>Introdueixi un número de telèfon vàlid de 9 dígits</small>
+					<input type="text" class="form-control" name="telefon" value="{{ $dades_client->telefon }}" pattern="[0-9]{9}" title="Introdueix un número de 9 xifres."/>
 				</div>
 				<div class="form-group">
 					<label for="adreca">Adreça</label>
